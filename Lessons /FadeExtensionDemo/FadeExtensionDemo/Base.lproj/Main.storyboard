@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14D131" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="ufC-wZ-h7g">
+            <objects>
+                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="FadeExtensionDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
+                        <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sunrise" translatesAutoresizingMaskIntoConstraints="NO" id="NiP-Vg-hyL">
+                                <rect key="frame" x="28" y="144" width="544" height="312"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="544" id="Yk9-yg-Yyh"/>
+                                    <constraint firstAttribute="height" constant="312" id="hEy-az-Ipn"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IDK-yk-pzq">
+                                <rect key="frame" x="267" y="517" width="66" height="30"/>
+                                <state key="normal" title="Next">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="sunRiseAndSet:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="RK1-ra-rgO"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="NiP-Vg-hyL" secondAttribute="centerX" id="38b-o9-PPL"/>
+                            <constraint firstAttribute="centerY" secondItem="NiP-Vg-hyL" secondAttribute="centerY" id="BCK-Oc-yfC"/>
+                            <constraint firstItem="IDK-yk-pzq" firstAttribute="top" relation="greaterThanOrEqual" secondItem="NiP-Vg-hyL" secondAttribute="bottom" constant="30" id="Crc-YO-zte"/>
+                            <constraint firstAttribute="centerX" secondItem="IDK-yk-pzq" secondAttribute="centerX" id="hhj-wx-POq"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="NiP-Vg-hyL" id="czA-yh-nwj"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="340" y="392"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="sunrise" width="2560" height="1440"/>
+    </resources>
+</document>
