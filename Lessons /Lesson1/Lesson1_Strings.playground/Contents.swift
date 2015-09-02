@@ -35,9 +35,9 @@ doggyDiet = "\(dogName) eats ?lbs of dog food per month"
 
 //: ### A String is an Array of Characters
 var password = "Meet me in St. Louis"
-for character in password {
+for character in password.characters {
     if character == "e" {
-        println("found an e!")
+        print("found an e!")
     } else {
     }
 }
