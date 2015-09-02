@@ -18,22 +18,22 @@ class LoginViewController: UIViewController {
 }
 
 //: ### Exercise 3
-//: The toInt() method of the Swift String class returns an optional of type Int?.
+//: The Swift Int type has an initializer that takes a string as a parameter and returns an optional of type Int?.
 //:
 //: 3a) Finish the code below by safely unwrapping the constant, `number`.
 var numericalString = "3"
-var number = numericalString.toInt()
+var number = Int(numericalString)
 //TODO: Unwrap number to make the following print statement more readable.
-println("\(number) is the magic number.")
+print("\(number) is the magic number.")
 //: 3b) Change the value of numericalString to "three" and execute the playground again.
 
 //: ### Exercise 4
 //: The class UIViewController has a property called tabBarController.  The tabBarController property is an optional of type UITabBarController?. The tabBarController itself holds a tabBar as a property. Complete the code below by filling in the appropriate use of optional chaining to access the tab bar property.
 var viewController = UIViewController()
 //if let tabBar = //TODO: Optional chaining here {
-//    println("Here's the tab bar.")
+//    print("Here's the tab bar.")
 //} else {
-//    println("No tab bar controller found.")
+//    print("No tab bar controller found.")
 //}
 //: ### Exercise 5
 //: Below is a dictionary of paintings and artists.

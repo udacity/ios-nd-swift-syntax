@@ -20,7 +20,7 @@ let didYouKnowString = "Did you know that the Swift String class comes with lots
 let whisperString = "psst" + ", " + didYouKnowString.lowercaseString
 let shoutString =  "HEY! DID YOU KNOW THAT THE SWIFT STRING CLASS COMES WITH LOTS OF USEFUL METHODS?"
 //: ### Exercise 3
-//: How many characters are in this string? Hint: One solution starts with casting the string as an array.
+//: How many characters are in this string? 
 let howManyCharacters = "How much wood could a woodchuck chuck if a woodchuck could chuck wood?"
 //: ### Exercise 4
 //: How many times does the letter "g" or "G" appear in the following string? Use a for-in loop to find out!

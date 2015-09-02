@@ -72,7 +72,7 @@ imageView.image = UIImage(named:"puppy_in_box")
 if let image = imageView.image {
     let size = image.size
 } else {
-    println("This image hasn't been set.")
+    print("This image hasn't been set.")
 }
 
 imageView.image
@@ -82,9 +82,9 @@ var anotherImageView = UIImageView()
 anotherImageView.image = UIImage(named:"puppy_in_box")
 
 if let imageSize = imageView.image?.size {
-    println("\(imageSize)")
+    print("\(imageSize)")
 } else {
-    println("This image hasn't been set.")
+    print("This image hasn't been set.")
 }
 
 // Example 2
@@ -92,13 +92,13 @@ var animal = Animal(name: "Lenny", species: "lemur", tailLength: 12)
 animal = Animal(name: "Gilbert", species: "Gorilla", tailLength: nil )
 
 if let tailLength = animal.tail?.length {
-    println("\(animal.name)'s tail is \(tailLength) long")
+    print("\(animal.name)'s tail is \(tailLength) long")
 } else {
-    println("\(animal.name) doesn't have a tail.")
+    print("\(animal.name) doesn't have a tail.")
 }
 //: ### Implicitly Unwrapped Optionals
 // Example 1
-let w =  "123".toInt()
+let w =  Int("123")
 w! * 2
 
 // Example 2

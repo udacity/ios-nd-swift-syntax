@@ -37,15 +37,15 @@ var drinkChoices = [
 
 // Generic drink offer
 for beverage in drinkChoices {
-    println ("Can I get you a \(beverage.category)")
+    print ("Can I get you a \(beverage.category)")
 }
 //: Type cast operators: __as?__ and __as!__
 // Specific drink offer
 for beverage in drinkChoices {
     if let coldDrink = beverage as? ColdDrink {
-        println ("Can I offer you a \(coldDrink.vessel) of \(coldDrink.category)?")
+        print ("Can I offer you a \(coldDrink.vessel) of \(coldDrink.category)?")
     } else if let hotDrink = beverage as? HotDrink {
-        println ("Can I get you some \(hotDrink.category) with \(hotDrink.pairing)?")
+        print ("Can I get you some \(hotDrink.category) with \(hotDrink.pairing)?")
     }
 }
 //: ### Downcasting with as!
@@ -57,5 +57,5 @@ var coffeeArray: [Beverage] = [
 
 for beverage in coffeeArray {
     let hotDrink = beverage as! HotDrink
-        println ("Can I get you some \(hotDrink.category) with \(hotDrink.pairing)?")
+        print ("Can I get you some \(hotDrink.category) with \(hotDrink.pairing)?")
 }
