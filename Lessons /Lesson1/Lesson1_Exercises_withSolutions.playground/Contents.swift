@@ -25,20 +25,19 @@ let shoutString =  "HEY! DID YOU KNOW THAT THE SWIFT STRING CLASS COMES WITH LOT
 //Solution
 //let shoutString = "HEY!" + " " + didYouKnowString.uppercaseString
 //: ### Exercise 3
-//: How many characters are in this string? Hint: One solution starts with casting the string as an array.
+//: How many characters are in this string?
 let howManyCharacters = "How much wood could a woodchuck chuck if a woodchuck could chuck wood?"
 
 //Solution
-let characterArray = Array(howManyCharacters)
-let thisMany = characterArray.count
+let thisMany = howManyCharacters.characters.count
 //: ### Exercise 4
 //: How many times does the letter "g" or "G" appear in the following string? Use a for-in loop to find out!
 let gString = "Gary's giraffe gobbled gooseberries greedily"
 var count = 0
 
 // Solution
-for Character in gString {
-    if Character == "g" || Character == "G" {
+for character in gString.characters {
+    if character == "g" || character == "G" {
         count++
     }
 }
@@ -49,7 +48,7 @@ let word = "fortunate"
 
 // Solution
 if word.rangeOfString("tuna") != nil {
-    println("yes")
+    print("yes")
 }
 //: ### Exercise 6
 //: Write a program that deletes all occurrences of the word "like" in the following string.
@@ -73,7 +72,7 @@ for (key, value) in dictionary {
     newestString = newestString.stringByReplacingOccurrencesOfString(key, withString: value)
 }
 
-println(newestString)
+print(newestString)
 //: ### Exercise 8
 //: Josie has been saving her pennies and has them all counted up. Write a program that, given a number of pennies, prints out how much money Josie has in dollars and cents.
 
