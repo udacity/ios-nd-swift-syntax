@@ -53,13 +53,13 @@ import Foundation
 //: Below is the code to find all the numbers present in an array, convert them to Ints, and calculate their sum. Have a look at the entities declared below: array, sum, and intToAdd. Think about whether each should be a constant or a variable and choose whether to declare them with let or var. When you're finished uncomment the code and see if the compiler agrees with your choices!
 // let or var array = ["A", "13", "B","5","87", "t", "41"] // TODO: Choose constant or variable
 // let or var sum = 0 // TODO: Choose constant or variable
-// for String in array {
-//     if String.toInt() != nil {
-//         let or var intToAdd = String.toInt()! // TODO: Choose constant or variable
+// for string in array {
+//     if Int(string) != nil {
+//         let or var intToAdd = Int(string)! // TODO: Choose constant or variable
 //         sum += intToAdd
 //     }
 // }
-// println(sum)
+// print(sum)
 //: ### Exercise 10
 //: For each of the following pairs, choose whether to declare a constant or a variable.
 //:
@@ -75,10 +75,10 @@ var currentElevation: Int
 //: Below is the code to reverse a string. Have a look at the entities declared: stringToReverse and reversedString. Choose whether to declare each with let or var. When you're finished uncomment the code and see if the compiler agrees with your choices!
 //let or var stringToReverse = "Mutable or Immutable? That is the question." //TODO:Choose let or var
 //let or var reversedString = "" //TODO:Choose let or var
-//for character in stringToReverse {
+//for character in stringToReverse.characters {
 //    reversedString = "\(character)" + reversedString
 //}
-//println(reversedString)
+//print(reversedString)
 
 
 

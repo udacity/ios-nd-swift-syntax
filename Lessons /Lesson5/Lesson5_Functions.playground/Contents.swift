@@ -1,11 +1,19 @@
 //: # Functions
 
 //: ## Global Functions
+//: The functions __print__, __min__, __max__, and __abs__ are a few examples of global functions. Check out a complete list of Swift's global functions [here](http://swiftdoc.org/swift-2/func/).
+//print
+print("I'm a global function!")
 
-var favoriteThings = ["raindrops on roses", "whiskers on kittens", "bright copper kettles"]
+//min and max
+var initialPrice = 50
+var bestOffer = 45
+var finalPrice = min(bestOffer, initialPrice)
 
-contains(favoriteThings, "raindrops on roses")
-dropFirst(favoriteThings)
+//abs
+var negativeSeven = -7
+abs(negativeSeven)
+
 
 //: ## Methods
 
@@ -17,9 +25,9 @@ class Arithmetic {
     func sumOfStrings(aBunchOfStrings: [String]) -> Int {
         let array = aBunchOfStrings
         var sum = 0
-        for String in array {
-            if String.toInt() != nil {
-                let intToAdd = String.toInt()!
+        for string in array {
+            if Int(string) != nil {
+                let intToAdd = Int(string)!
                 sum += intToAdd
             }
         }
@@ -36,10 +44,10 @@ let stringToReverse = "Mutable or Immutable? That is the question."
 
 func reverseString(stringToReverse: String) {
     var reversedString = ""
-    for character in stringToReverse {
+    for character in stringToReverse.characters {
         reversedString = "\(character)" + reversedString
     }
-    println(reversedString)
+    print(reversedString)
 }
 
 //:    func functionName (externalParameterName localParameterName: parameterType) -> returnType {
@@ -50,8 +58,23 @@ func reverseString(stringToReverse: String) {
 //: ## Practice writing function definitions 
 //: Example 1 - firstCharacterOf
 // TODO: Write the firstCharacterOf function here.
+func firstCharacterOf(word word: String)-> Character {
+    return word[word.startIndex]
+}
+
+firstCharacterOf(word: "Mom")
+
+
 //: Example 2 - placeFirstLetterLast
 // TODO: Write placeFirstLetterLast function here. 
+func placeFirstLetterLast(var myString: String) -> String {
+    myString.append(firstCharacterOf(word: myString))
+    myString.removeAtIndex(myString.startIndex)
+    return myString
+}
+
+placeFirstLetterLast("Mom")
+
 
 //: Example 3 - filterByYear
 
