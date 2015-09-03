@@ -48,9 +48,9 @@ class Peach {
     func ripen() {
         self.softness++
         if self.softness > 4 {
-            println("Eat me!")
+            print("Eat me!")
         } else {
-            println( "Give me a little more time.")
+            print( "Give me a little more time.")
         }
     }
 }

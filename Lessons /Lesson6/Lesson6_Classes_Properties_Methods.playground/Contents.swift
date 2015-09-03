@@ -76,7 +76,7 @@ var myArchive = MovieArchive(movies: robReinerMovies)
 
 var movie = myArchive.filterByYear(1986)
 var firstMovie = movie[0]
-println("\(firstMovie.title)")
+print("\(firstMovie.title)")
 
 //: ### Calling Type methods
 UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.PhotoLibrary)
