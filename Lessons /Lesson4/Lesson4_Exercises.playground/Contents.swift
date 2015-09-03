@@ -27,17 +27,15 @@ enum Sport {
 var sport = Sport.Baseball
 
 if sport == .Baseball {
-    println("Go A's!")
+    print("Go A's!")
 } else if sport == .Basketball {
-    println("Go Warriors!")
+    print("Go Warriors!")
 } else if sport == .Football {
-    println( "Go Raiders!")
+    print( "Go Raiders!")
 } else if sport == .Hockey {
-    println("Go Sharks!")
+    print("Go Sharks!")
 } else if sport == .Soccer {
-    println("Go Earthquakes!")
-} else {
-    println("Go Team!")
+    print("Go Earthquakes!")
 }
 //: ### Exercise 6
 //: Below is an enum and an if-else statement for implementing the game Rock-Paper-Scissors.
@@ -58,23 +56,8 @@ if myMove == .Rock && yourMove == .Paper || myMove == .Paper && yourMove == .Roc
     resultsMessage = "Rock crushes Scissors. "
 } else if myMove == .Paper && yourMove == .Scissors || myMove == .Scissors && yourMove == .Paper {
     resultsMessage = "Scissors cut Paper."
-} else {
-    
 }
 
-// Alternate solution
-switch (myMove, yourMove) {
-case (.Rock, .Paper), (.Paper, .Rock):
-    resultsMessage = "Paper covers Rock."
-case let (a, b) where a==b :
-    resultsMessage = "It's a tie!"
-case (.Rock, .Scissors), (.Scissors, .Rock):
-    resultsMessage = "Rock crushes Scissors."
-case (.Paper, .Scissors), (.Scissors, .Paper):
-    resultsMessage = "Scissors cut Paper."
-default:
-    resultsMessage = "Paper covers Rock."
-}
 //: ### Exercise 7
 //: Below is an if-else statement matching an assignment score to a letter grade.
 var score = 97
@@ -94,14 +77,13 @@ if 90...100 ~= score {
 //: ### Exercise 8
 //: The if-else statement below translates a word into Pig Latin. Without using the "vowels" array, write an equivalent switch statement.
 var word = "can"
-var firstLetter = Array(word)[0]
-var letterString = String(firstLetter)
+var firstLetter = Array(word.characters)[0]
 var newWord = ""
-var vowels = ["a", "e", "i", "o", "u"]
+var vowels: [Character] = ["a", "e", "i", "o", "u"]
 
-if contains(vowels,letterString) {
+if vowels.contains(firstLetter) {
     newWord = word + "yay"
 } else {
-    var newWord = dropFirst(word)
-    newWord = word + letterString + "ay"
+    word.removeAtIndex(word.startIndex)
+    newWord = "\(word)\(firstLetter)ay"
 }

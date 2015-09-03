@@ -30,7 +30,7 @@ var waitingList = ["Lyla", "Daniel", "Isabel", "Eric"]
 //: ### Exercise 7
 //: Using subscript syntax, print out the 2nd and 3rd names from the admitted array.
 // Solution
-println("second: \(admitted[1]), third: \(admitted[2])")
+print("second: \(admitted[1]), third: \(admitted[2])")
 //: ## Dictionary initialization
 
 //: ### Exercise 8
@@ -54,7 +54,7 @@ var presidentialPetsDict = ["Barack Obama":"Bo", "Bill Clinton": "Socks", "Georg
 var presidentialDogs = presidentialPetsDict
 //: ### Exercise 12
 //: Use subscript syntax to fill in the println statement below and produce the following string: "Michele Obama walks Bo every morning." You'll need to retrieve a value from the presidentialDogs dictionary and unwrap it using if let.
-//println("Michele Obama walks \() every morning.")
+//print("Michele Obama walks \() every morning.")
 //: ### Exercise 13
 // How many studio albums did Led Zeppelin release?
 var studioAlbums = ["Led Zeppelin":1969, "Led Zeppelin II": 1969, "Led Zeppelin III": 1970, "Led Zeppelin IV": 1971, "Houses of the Holy":1973, "Physical Graffiti": 1975, "Presence":1976, "In Through the Out Door":1979, "Coda":1982]

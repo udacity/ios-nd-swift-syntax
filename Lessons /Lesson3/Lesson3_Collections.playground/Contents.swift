@@ -53,7 +53,7 @@ animalGroupsDict["monkeys"] = "troop"
 
 // The count method is available to all collections.
 animalGroupsDict.count
-println(animalGroupsDict)
+print(animalGroupsDict)
 
 // Removing items from a dictionary
 animalGroupsDict["crows"] = nil
@@ -65,7 +65,7 @@ var group = animalGroupsDict.updateValue("gaggle", forKey: "geese")
 group.dynamicType
 
 animalGroupsDict.updateValue("crash", forKey:"rhinoceroses")
-println(animalGroupsDict)
+print(animalGroupsDict)
 
 //Retrieving the value for a particular key
 let groupOfWhales = animalGroupsDict["whales"]
@@ -74,16 +74,16 @@ let groupOfWhales = animalGroupsDict["whales"]
 //:     animalGroupsDict["whales"]
 // We unwrap a value returned from a dictionary just like we would unwrap any other optional.
 if let groupOfWhales = animalGroupsDict["whales"] {
-    println("We saw a \(groupOfWhales) of whales from the boat.")
+    print("We saw a \(groupOfWhales) of whales from the boat.")
 } else {
-    println("No value found for that key.")
+    print("No value found for that key.")
 }
 
 // What happens if the key isn't found?
 if let groupOfSasquatches = animalGroupsDict["Sasquatches"] {
-    println("We saw a \(groupOfSasquatches) of Sasquatches on our hike.")
+    print("We saw a \(groupOfSasquatches) of Sasquatches on our hike.")
 } else {
-    println("No value found for that key.")
+    print("No value found for that key.")
 }
 
 //: ## Sets

@@ -17,7 +17,7 @@ for var index = 99; index > 0; --index {
 
 //: ### Example 1
 //var demoString = "Swift enumeration is so fast!"
-//for character in demoString {
+//for character in demoString.characters {
 //    print(character)
 //}
 
@@ -72,17 +72,17 @@ while beerVolume > 0 {
     beerVolume -= sip
 }
 
-//: ### Do-While loops
-//:    do {
+//: ### Repeat-While loops
+//:    repeat {
 //:        statement
 //:    } while condition
 
-//do {
+//repeat {
 // --timer
 //} while timer > 0
 //
-//do {
-//    println ("Cheers")
+//repeat {
+//    print("Cheers")
 //    beerVolume -= sip
 //} while beerVolume > 0
 
@@ -98,38 +98,10 @@ while beerVolume > 0 {
 
 //: ### Example 1
 var hungry = true
-var wantTeddyBear = true
-var haveMoney = true
-var raining = true
-
-func goEat() {
-    print("nom nom")
-}
-
-func buyTeddyBear() {
-    print("snuggle snuggle")
-}
-
-func watchAMovie() {
-    print("Ryan Gosling, be still my heart!")
-}
-
 if hungry {
     print("Let's eat!")
 } else {
     print("Let's wait.")
-}
-
-if hungry {
-    goEat()
-}
-
-if wantTeddyBear && haveMoney {
-    buyTeddyBear()
-}
-
-if raining {
-    watchAMovie()
 }
 
 //: ### Example 2
@@ -219,25 +191,3 @@ case 78...95:
 default:
     print("Very uncomfortable")
 }
-
-
-
-var patienceLevel = "low"
-
-
-switch patienceLevel {
-case "low":
-    print("What the #**!  You &&$*!")
-default:
-    break
-}
-
-
-
-
-
-
-
-
-
-

@@ -9,7 +9,7 @@ var movieTitleArray = ["Point Break", "The Dark Knight", "Star Wars", "When Harr
 
 // Solution
 for title in movieTitleArray {
-    println("\(title) with Puppets!")
+    print("\(title) with Puppets!")
 }
 //: ### Exercise 2
 //: Rent is increasing by 20% this year. Use a for-in loop to apply this increase to each item in the oldMountainViewRent array.  Store the new values in the array newMountainViewRent.
@@ -20,17 +20,17 @@ var newMountainViewRent = [Double]()
 for rent in oldMountainViewRent {
     newMountainViewRent.append(rent * 1.20)
 }
-println(newMountainViewRent)
+print(newMountainViewRent)
 //: ### Exercise 3
-//: For each food with a true value, print out "<food>, yum!" For each food with a false value print out, "<food>, yuck!"
+//: For each food with a true value, print out "<food>, yum!" For each food with a false value, print out "<food>, yuck!"
 var polarizingFoods = ["Anchovies":true, "Coconut":true, "Cilantro":true, "Liver": false]
 
 // Solution
 for (food, preference) in polarizingFoods {
     if preference {
-        println("\(food), yum!")
+        print("\(food), yum!")
     } else {
-        println("\(food), yuck!")
+        print("\(food), yuck!")
     }
 }
 //: ### Exercise 4
@@ -53,33 +53,31 @@ enum Sport {
 var sport = Sport.Baseball
 
 if sport == .Baseball {
-    println("Go A's!")
+    print("Go A's!")
 } else if sport == .Basketball {
-    println("Go Warriors!")
+    print("Go Warriors!")
 } else if sport == .Football {
-    println( "Go Raiders!")
+    print( "Go Raiders!")
 } else if sport == .Hockey {
-    println("Go Sharks!")
+    print("Go Sharks!")
 } else if sport == .Soccer {
-    println("Go Earthquakes!")
+    print("Go Earthquakes!")
 } else {
-    println("Go Team!")
+    print("Go Team!")
 }
 
 // Solution
 switch sport {
 case .Baseball:
-    println("Go A's!")
+    print("Go A's!")
 case .Basketball:
-    println("Go Warriors!")
+    print("Go Warriors!")
 case .Football:
-    println("Go Raiders!")
+    print("Go Raiders!")
 case .Hockey:
-    println("Go Sharks!")
+    print("Go Sharks!")
 case .Soccer:
-    println("Go Earthquakes")
-default:
-    println("Go Team!")
+    print("Go Earthquakes")
 }
 //: ### Exercise 6
 // Below is an enum and an if-else statement for implementing the game Rock-Paper-Scissors.
@@ -100,9 +98,7 @@ if myMove == .Rock && yourMove == .Paper || myMove == .Paper && yourMove == .Roc
     resultsMessage = "Rock crushes Scissors. "
 } else if myMove == .Paper && yourMove == .Scissors || myMove == .Scissors && yourMove == .Paper {
     resultsMessage = "Scissors cut Paper."
-} else {
-    
-}
+} 
 
 // Solution
 switch (myMove, yourMove) {
@@ -114,8 +110,6 @@ case (.Rock, .Scissors), (.Scissors, .Rock):
     resultsMessage = "Rock crushes Scissors."
 case (.Paper, .Scissors), (.Scissors, .Paper):
     resultsMessage = "Scissors cut Paper."
-default:
-    resultsMessage = "Paper covers Rock."
 }
 
 // Alternate solution
@@ -167,16 +161,15 @@ default:
 //: The if-else statement below translates a word into Pig Latin. Without using the "vowels" array, write an equivalent switch statement.
 
 var word = "can"
-var firstLetter = Array(word)[0]
-var letterString = String(firstLetter)
+var firstLetter = Array(word.characters)[0]
 var newWord = ""
-var vowels = ["a", "e", "i", "o", "u"]
+var vowels: [Character] = ["a", "e", "i", "o", "u"]
 
-if contains(vowels,letterString) {
+if vowels.contains(firstLetter) {
     newWord = word + "yay"
 } else {
-    var newWord = dropFirst(word)
-    newWord = word + letterString + "ay"
+    word.removeAtIndex(word.startIndex)
+    newWord = "\(word)\(firstLetter)ay"
 }
 
 // Solution
@@ -184,6 +177,6 @@ switch firstLetter {
 case "a", "e", "i", "o", "u":
     newWord = word + "yay"
 default:
-    word = dropFirst(word)
-    var newWord = word + letterString + "ay"
+    word.removeAtIndex(word.startIndex)
+    newWord = "\(word)\(firstLetter)ay"
 }

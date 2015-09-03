@@ -19,7 +19,7 @@ var boolArray = [true, false, false, true, true]
 var spaniels = ["American Cocker", "Cavalier King Charles", "English Springer", "French", "Irish Water","Papillon", "Picardy","Russian", "French", "Welsh Springer"]
 
 // Solution
-println(spaniels.count)
+print(spaniels.count)
 
 //: ### Exercise 3
 //: Insert "indigo" into the array below so that its index is after "blue" and before "violet".
@@ -46,7 +46,7 @@ admitted.append(name)
 //: ### Exercise 7
 //: Using subscript syntax, print out the 2nd and 3rd names from the admitted array.
 // Solution
-println("second: \(admitted[1]), third: \(admitted[2])")
+print("second: \(admitted[1]), third: \(admitted[2])")
 //: ## Dictionary initialization
 
 //: ### Exercise 8
@@ -66,7 +66,7 @@ var presidentialPetsDict = ["Barack Obama":"Bo", "Bill Clinton": "Socks", "Georg
 // ["Barack Obama":"Bo", "George Bush": "Miss Beazley","Bill Clinton": "Socks", "George H. W. Bush": "Millie", "Ronald Reagan": "Lucky"]
 // Solution
 presidentialPetsDict["George H. W. Bush"] = "Millie"
-println(presidentialPetsDict)
+print(presidentialPetsDict)
 
 //: ### Exercise 10
 //: Remove the entry for "George Bush" and replace it with an entry for "George W. Bush".
@@ -79,14 +79,14 @@ var presidentialDogs = presidentialPetsDict
 // Solution
 presidentialDogs["Bill Clinton"] = "Buddy"
 //: ### Exercise 12
-//: Use subscript syntax to fill in the println statement below and produce the following string: "Michele Obama walks Bo every morning." You'll need to retrieve a value from the presidentialDogs dictionary and unwrap it using if let.
-//println("Michele Obama walks \() every morning.")
+//: Use subscript syntax to fill in the print statement below and produce the following string: "Michele Obama walks Bo every morning." You'll need to retrieve a value from the presidentialDogs dictionary and unwrap it using if let.
+//print("Michele Obama walks \() every morning.")
 
 // Solution
 if let dog = presidentialDogs["Barack Obama"] {
-    println("Michele Obama walks \(dog) every morning.")
+    print("Michele Obama walks \(dog) every morning.")
 } else {
-    println("No value found")
+    print("No value found")
 }
 //: ### Exercise 13
 // How many studio albums did Led Zeppelin release?
