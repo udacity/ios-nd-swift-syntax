@@ -11,23 +11,23 @@ import UIKit
 //:Rewrite the sorting closure expression to be as concise as possible.
 // 1
 var surnames = ["Silverman", "Fey", "Whig", "Schumer", "Kaling"]
-let orderedSurnames = sorted(surnames, {(name1: String, name2: String) -> Bool in
+let orderedSurnames = surnames.sort({(name1: String, name2: String) -> Bool in
     return name2 > name1
 })
 
 //Solution
-let reversedSurnames = sorted(surnames, {
+let reversedSurnames = surnames.sort({
    $0 > $1
 })
 
 // 2
 let battingAverages = [0.302, 0.556, 0.280, 0.500, 0.281, 0.285]
-let sortedAverages = sorted(battingAverages, {(average1: Double, average2: Double) -> Bool in
+let sortedAverages = battingAverages.sort({(average1: Double, average2: Double) -> Bool in
     return average2 > average1
 })
 
 // Solution
-let reversedAverages = sorted(battingAverages, {
+let reversedAverages = battingAverages.sort({
     $0 > $1
 })
 
@@ -45,14 +45,14 @@ let numbersAsStrings = ["685", "1728", "648", "87", "979", "59175432"]
 
 // Solution
 let divisibleByTwelve = numbersAsStrings.filter({(numberString: String) -> Bool in
-    return numberString.toInt()! % 12 == 0
+    return Int(numberString)! % 12 == 0
 })
 
 //: __3b.__
 //: Rewrite the filtering closure expression to be as concise as possible.
 // Solution
 let stillDivisibleByTwelve = numbersAsStrings.filter(){
-    $0.toInt()! % 12 == 0
+    Int($0)! % 12 == 0
 }
 //: __Problem 4__
 //:
@@ -89,17 +89,17 @@ let pricesInRupees = [750, 825, 2000, 725]
 
 func timeIntervalFromString(timeString: String) -> Int {
     var timeArray = timeString.componentsSeparatedByString(":")
-    var minutes = String(timeArray[0]).toInt()!
-    var seconds = String(timeArray[1]).toInt()!
+    let minutes = Int(String(timeArray[0]))!
+    let seconds = Int(String(timeArray[1]))!
     return seconds + (minutes * 60)
 }
 
 func timeStringFromInterval(timeInterval: Int) -> NSString {
-    var seconds = timeInterval % 60
-    var minutes = (timeInterval/60) % 60
-    var hours = timeInterval/3600
+    let seconds = timeInterval % 60
+    let minutes = (timeInterval/60) % 60
     return NSString(format: "%.1d:%.2d",minutes,seconds)
 }
+
 
 var oldTimes = ["5:18", "5:45", "5:56", "5:25", "5:27"]
 

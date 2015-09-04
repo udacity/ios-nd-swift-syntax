@@ -12,11 +12,11 @@
 //: ## Sorted
 
 var bids = [48.1, 75.4, 63.7, 52.4, 68.2]
-var orderedBids = sorted(bids, {(bid1: Double, bid2:Double) -> Bool in
+var orderedBids = bids.sort( {(bid1: Double, bid2:Double) -> Bool in
     return  bid2 > bid1
 })
 
-println(orderedBids)
+print(orderedBids)
 //: Closures typically take the form:
 //:
 //: { (parameters) -> return type **in**
@@ -26,22 +26,20 @@ println(orderedBids)
 //:}
 
 var birthYears = [2004, 2011, 2007, 2005, 2002]
-var youngestToOldest = sorted(birthYears, { (year1: Int, year2: Int) -> Bool in
+var youngestToOldest = birthYears.sort({ (year1: Int, year2: Int) -> Bool in
     return year1 > year2
 })
 
 youngestToOldest
 
 //: ### Quiz: Choose the correct type for this closure
-
 // Question 1
 var soup = ["tomato", "hot and sour", "french onion", "vegetable"]
-var alphabeticalSoup = sorted(soup, { (soup1: String, soup2: String) -> Bool in
+var alphabeticalSoup = soup.sort({ (soup1: String, soup2: String) -> Bool in
     return soup2 > soup1
 })
 
 alphabeticalSoup
-
 //: ### Tricks to make your closures more concise: filter
 var examGrades = [81, 99, 54, 84, 98]
 var passingGrades = examGrades.filter({(grade: Int) -> Bool in
@@ -74,7 +72,7 @@ myFailingGrades
 
 // Example 2
 var soups = ["tomato", "hot and sour", "french onion", "vegetable"]
-var sortedSoups = sorted(soup, {
+var sortedSoups = soup.sort({
     $1 > $0
 })
 sortedSoups
