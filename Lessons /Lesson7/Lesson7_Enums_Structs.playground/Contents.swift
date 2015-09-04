@@ -71,7 +71,7 @@ struct Beer {
  
     static func cheers(language: String) {
         if let cheers = cheersDict[language] {
-            println("\(cheers)")
+            print("\(cheers)")
         }
     }
 }
@@ -117,6 +117,7 @@ classyFrameForMom.height = 7
 
 //: ### Choose the right type for the job
 // enum, class, or struct? 
+// Uncomment each example one at a time as you guess the corresponding answer.
 
 // _____ Triangle {
 //    let angles = [30, 60, 90]

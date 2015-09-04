@@ -2,7 +2,7 @@
 
 //: __Problem 1__
 //:
-//: In the code snippet below, at line 28, what is the value of macchiato.steamedMilk when EspressoDrink is implemented as a struct? What about when EspressoDrink is implemented as a class?
+//: At the end of the code snippet below, what is the value of macchiato.steamedMilk when EspressoDrink is implemented as a struct? What about when EspressoDrink is implemented as a class?
 enum Amount {
     case None
     case Splash
@@ -76,7 +76,7 @@ struct Bicycle {
     static var bikeCategories: [String] = ["Road", "Touring", "Mountain", "Commuter", "BMX"]
     
     func lookCool() {
-        println("Check out my gear-shifters!")
+        print("Check out my gear-shifters!")
     }
 }
 
@@ -145,9 +145,9 @@ struct Cookie {
     
     func tempt(){
         if delicious {
-            println("I'll just have one more.")
+            print("I'll just have one more.")
         } else {
-            println("I really shouldn't.")
+            print("I really shouldn't.")
         }
     }
 }
@@ -188,7 +188,7 @@ class BnBListing {
     
     func book() {
         self.available = false
-        println("Reservation confirmed!")
+        print("Reservation confirmed!")
     }
 }
 
