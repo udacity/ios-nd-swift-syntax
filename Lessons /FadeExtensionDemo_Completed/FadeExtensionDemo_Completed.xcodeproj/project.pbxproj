@@ -159,6 +159,7 @@
 		EDF4ACF71B55D18400635D64 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0630;
 				ORGANIZATIONNAME = "Gabrielle Miller-Messner";
 				TargetAttributes = {
@@ -413,6 +414,7 @@
 				EDF4AD201B55D18500635D64 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		EDF4AD211B55D18500635D64 /* Build configuration list for PBXNativeTarget "FadeExtensionDemo_CompletedTests" */ = {
 			isa = XCConfigurationList;
@@ -421,6 +423,7 @@
 				EDF4AD231B55D18500635D64 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

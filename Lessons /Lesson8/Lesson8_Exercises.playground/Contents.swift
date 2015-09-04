@@ -104,7 +104,7 @@ class Friend {
     }
     
     func loadVan(var empty: Bool) -> Bool {
-        println("We can totally fit a king size bed in here.")
+        print("We can totally fit a king size bed in here.")
         empty = false
         return empty
     }
@@ -169,7 +169,7 @@ protocol Souschef {
     func rinse(vegetable: String) -> String
 }
 
-class Roommate: Souschef {
+class Roommate {
     var hungry = true
     var name: String
     

@@ -30,13 +30,13 @@ class Teenager: Babysitter {  // Solution: 1a
     func playCandyland(numberOfTimes: Int) {
         var count = 0
         while count < numberOfTimes {
-            println("We made it to the Candy Castle!")
+            print("We made it to the Candy Castle!")
             count++
         }
      }
     
     func read(book: String, firstLine: String, var asleep: Bool) -> Bool {
-        println("Of course, we can read \(book) again. \(firstLine)...")
+        print("Of course, we can read \(book) again. \(firstLine)...")
         asleep = true
         return asleep
     }
@@ -87,11 +87,11 @@ class Animal: Adorable { //Solution: 2a
     }
 //Solution: 2b
     func frolick() {
-        println("Watch me jump around in this pile of leaves!")
+        print("Watch me jump around in this pile of leaves!")
     }
 
     func curlIntoSmallBall() {
-        println("Who knew nuzzling your own booty was so charming?")
+        print("Who knew nuzzling your own booty was so charming?")
     }
 }
 var pic = UIImage(named: "frolick.jpg")
@@ -110,7 +110,7 @@ protocol Mover {
     var willWorkForPizzaAndBeer: Bool { get }
 
     func carryCouch() -> String
-    func loadVan(Bool) -> Bool
+    func loadVan(empty: Bool) -> Bool
 }
 
 class Friend: Mover { // Solution: 3b
@@ -138,7 +138,7 @@ class Friend: Mover { // Solution: 3b
     }
     
     func loadVan(var empty: Bool) -> Bool {
-        println("We can totally fit a king size bed in here.")
+        print("We can totally fit a king size bed in here.")
         empty = false
         return empty
     }
@@ -212,7 +212,7 @@ protocol Souschef {
     func rinse(vegetable: String) -> String
 }
 
-class Roommate: Souschef {
+class Roommate {
     var hungry = true
     var name: String
     
@@ -249,11 +249,11 @@ class Minion {
 // Solution 
 extension Minion: DirtyDeeds {
     func cheat() {
-        println("Mwa ha ha!")
+        print("Mwa ha ha!")
     }
     
     func steal() {
-        println("Mwa ha ha!")
+        print("Mwa ha ha!")
     }
 }
 

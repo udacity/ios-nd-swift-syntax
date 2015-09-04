@@ -40,12 +40,12 @@ class Neighbor: DogWalker {
     func throwBall(numberOfTimes:Int) {
         var count = 0
         while count < numberOfTimes {
-            println("Go get it!")
+            print("Go get it!")
             count++
         }
     }
     
     func rubBelly() {
-        println("Rub rub")
+        print("Rub rub")
     }
 }
