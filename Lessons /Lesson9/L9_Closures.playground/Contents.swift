@@ -71,10 +71,12 @@ myFailingGrades
 
 // Example 2
 var soups = ["tomato", "hot and sour", "french onion", "vegetable"]
-var sortedSoups = soups.sort({
-    $1 > $0
+var alphabeticalSoups = soups.sort({(soup1: String, soup2: String) -> Bool in
+    return soup2 > soup1
 })
-sortedSoups
+
+
+alphabeticalSoups
 
 
 

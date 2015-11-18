@@ -78,7 +78,7 @@ var currentElevation: Int
 //for character in stringToReverse.characters {
 //    reversedString = "\(character)" + reversedString
 //}
-//print(reversedString)
+//print(reversedString, terminator: "")
 
 
 

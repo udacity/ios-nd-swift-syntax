@@ -135,16 +135,16 @@ var balance: Double
 //: Below is the code to reverse a string. Have a look at the entities declared: stringToReverse and reversedString. Choose whether to declare each with let or var. When you're finished uncomment the code and see if the compiler agrees with your choices!
 //let or var stringToReverse = "Mutable or Immutable? That is the question." //TODO:Choose let or var
 //let or var reversedString = "" //TODO:Choose let or var
-//for character in stringToReverse {
+//for character in stringToReverse.characters {
 //    reversedString = "\(character)" + reversedString
 //}
-//println(reversedString)
+//print(reversedString, terminator: "")
 
 // Solution
-// let stringToReverse = "Mutable or Immutable? That is the question."
-// var reversedString = ""
-// for character in stringToReverse {
-//     reversedString = "\(character)" + reversedString
-// }
-// println(reversedString)
+ let stringToReverse = "Mutable or Immutable? That is the question."
+ var reversedString = ""
+ for character in stringToReverse.characters {
+     reversedString = "\(character)" + reversedString
+ }
+print(reversedString, terminator: "")
 
