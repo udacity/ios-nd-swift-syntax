@@ -7,52 +7,6 @@ enum PrimaryColor {
     case Yellow
 }
 
-enum Size: Int {
-    case Small
-    case Medium
-    case Large
-}
-
-enum Season {
-    case Fall
-    case Winter
-    case Spring
-    case Summer
- }
-
-enum Family {
-    case Mom(Person)
-    case Dad(Person)
-    case Brother(Person)
-    case Sister(Person)
-}
-
-var myMom = Person(name: "Bethi", age: 49)
-
-
-let myFavoriteSeason = Season.Spring
-myFavoriteSeason.hashValue
-
-enum MazeDirection: Int {
-    case Up = 0, Right, Down, Left
-}
-
-var direction = MazeDirection.Up
-direction.rawValue
-
-var favoriteActivity = ""
-
-switch (myFavoriteSeason) {
-    case .Fall:
-        favoriteActivity = "seeing the leaves change color."
-    case .Winter:
-       favoriteActivity = "skiing."
-    case .Spring:
-        favoriteActivity = "seeing the wildflowers bloom"
-    case .Summer:
-        favoriteActivity = "swimming in the river"
-}
-
 enum Aunties {
     case Aime, Billie, Diane, Gail, Janie, Pam
 }
@@ -65,26 +19,8 @@ enum AmericanLeagueWest: String {
     case Rangers = "Arlington"    
 }
 
-enum Weather {
-    case Rain
-    case Sun
-    case Snow
-    case Wind
-}
-
-//umbrella, sun hat, parka, jacket
-
-enum Transportation: String {
-    case Airplane = "flight"
-    case Car = "drive"
-    case Train, Bike = "ride"
-}
-
-
-
-
-
 var message = "I hope the A's stay in \(AmericanLeagueWest.As.rawValue)"
+
 //: Enums and switch statements go hand in hand.
 enum CaliforniaPark {
     case Yosemite, DeathValley, Lasson, Sequoia
@@ -124,13 +60,15 @@ familyReunionFrame.area
 
 
 //: Example 2
+// This example has been modified to round more accurately
 struct Beer {
     var style = "Pale Ale"
-    var percentAlcohol = 5
+    var percentAlcohol = 5.0
     static var cheersDict = ["English": "Cheers!","German": "Prost!", "Japanese": "乾杯", "Mandarin": "干杯!","Russian":"На здоровье!", "Spanish":"Salud!", "Italian": "Cin cin!"]
     var suggestedVolumePerServing:String {
         get {
-            return "\(12/(percentAlcohol/5)) ounces"
+            let ounces: Int = Int(12.0/(percentAlcohol/5.0))
+            return "\(ounces) ounces"
         }
     }
  
@@ -141,9 +79,10 @@ struct Beer {
     }
 }
 
-var happyHourBeer = Beer(style:"Lager", percentAlcohol: 6)
+var happyHourBeer = Beer(style:"Lager", percentAlcohol: 6.0)
 happyHourBeer.suggestedVolumePerServing
 Beer.cheers("Japanese")
+
 //: ### Structs and Enums are Value Types
 
 //: Value types are copied with every assignment
@@ -151,7 +90,6 @@ var frame = PictureFrame(width: 3, height: 5, thickness: 0.5)
 var frameForMom = frame
 frameForMom.width = 5
 frameForMom.height = 7
-
 
 //: Reference types create a new reference with every assignment, they are NOT copied.
 // What happens if we make pictureFrame a class?
