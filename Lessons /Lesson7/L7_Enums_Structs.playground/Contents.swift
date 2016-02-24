@@ -67,8 +67,8 @@ struct Beer {
     static var cheersDict = ["English": "Cheers!","German": "Prost!", "Japanese": "乾杯", "Mandarin": "干杯!","Russian":"На здоровье!", "Spanish":"Salud!", "Italian": "Cin cin!"]
     var suggestedVolumePerServing:String {
         get {
-            let ounces: Int = Int(12.0/(percentAlcohol/5.0))
-            return "\(ounces) ounces"
+            let volume: Int = Int(12.0/(percentAlcohol/5.0))
+            return "\(volume) ounces"
         }
     }
  
