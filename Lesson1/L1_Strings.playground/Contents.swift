@@ -60,5 +60,5 @@ for character in password.characters {
 }
 
 //: ### A String can be treated as an NSString
-let newPassword = password.stringByReplacingOccurrencesOfString("e", withString: "3")
+let newPassword = password.replacingOccurrences(of: "e", with: "3")
 

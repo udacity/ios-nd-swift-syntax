@@ -4,10 +4,10 @@
 //:
 //: At the end of the code snippet below, what is the value of macchiato.steamedMilk when EspressoDrink is implemented as a struct? What about when EspressoDrink is implemented as a class?
 enum Amount {
-    case None
-    case Splash
-    case Some
-    case Alot
+    case none
+    case splash
+    case some
+    case alot
 }
 
 struct EspressoDrink {
@@ -22,9 +22,9 @@ struct EspressoDrink {
     }
 }
 
-var macchiato = EspressoDrink(numberOfShots: 2, steamedMilk: .None, foam: true)
+var macchiato = EspressoDrink(numberOfShots: 2, steamedMilk: .none, foam: true)
 var espressoForGabrielle = macchiato
-espressoForGabrielle.steamedMilk = .Splash
+espressoForGabrielle.steamedMilk = .splash
 macchiato.steamedMilk
 
 //: __Problem 2__
@@ -47,11 +47,11 @@ macchiato.steamedMilk
 //}
 
 //____ WritingImplement {
-//    case Pen
-//    case Pencil
-//    case Marker
-//    case Crayon
-//    case Chalk
+//    case pen
+//    case pencil
+//    case marker
+//    case crayon
+//    case chalk
 //}
 
 //____ Material {
@@ -100,9 +100,9 @@ macchiato.steamedMilk
 //}
 
 //____ Size: String {
-//    case Small = "8 ounces"
-//    case Medium = "12 ounces"
-//    case Large = "16 ounces"
+//    case small = "8 ounces"
+//    case medium = "12 ounces"
+//    case large = "16 ounces"
 //}
 
 //: __Problem 4__

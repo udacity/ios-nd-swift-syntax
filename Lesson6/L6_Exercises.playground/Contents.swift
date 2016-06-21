@@ -56,7 +56,7 @@ class FluffyDog {
         self.droolFactor = droolFactor
     }
     
-    func chase(wheeledVehicle: String)-> String {
+    func chase(_ wheeledVehicle: String)-> String {
         return "Where are you going, \(wheeledVehicle)? Wait for me! No, don't go! I will catch you!"
     }
 }
@@ -68,9 +68,9 @@ class FluffyDog {
 //: __4a.__
 //: Write an instance method, bark(), that returns a different string based on the value of the stored property, size.
 enum Size: Int {
-    case Small
-    case Medium
-    case Large
+    case small
+    case medium
+    case large
 }
 
 class ChattyDog {
@@ -95,26 +95,26 @@ class ChattyDog {
 //:__5a.__
 //: Write an initialization method for the House class below.
 enum Quality {
-    case Poor, Fair, Good, Excellent
+    case poor, fair, good, excellent
 }
 
 enum NaturalDisaster {
-    case Earthquake
-    case Wildfire
-    case Hurricane
+    case earthquake
+    case wildfire
+    case hurricane
 }
 
 class House {
     var numberOfBedrooms: Int = 0
     let location: Quality
  
-    func willStayStanding(naturalDisaster:NaturalDisaster)-> Bool {
+    func willStayStanding(_ naturalDisaster:NaturalDisaster)-> Bool {
         switch naturalDisaster {
-        case .Earthquake:
+        case .earthquake:
             return true
-        case .Wildfire:
+        case .wildfire:
             return true
-        case .Hurricane:
+        case .hurricane:
             return false
         }
     }

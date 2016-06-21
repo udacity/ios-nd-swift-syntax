@@ -14,9 +14,9 @@ import Foundation
 //: __1c.__ Test your code by creating an instance of the Teenager class and calling the methods playCandyland() and read().
 
 enum Level {
-    case Low
-    case Medium
-    case High
+    case low
+    case medium
+    case high
 }
 
 class Teenager {
@@ -32,8 +32,8 @@ class Teenager {
 }
 
 protocol Babysitter {
-    func playCandyland(numberOfTimes: Int)
-    func read(book: String, firstLine: String, asleep: Bool) -> Bool
+    func playCandyland(_ numberOfTimes: Int)
+    func read(_ book: String, firstLine: String, asleep: Bool) -> Bool
 }
 
 
@@ -47,7 +47,7 @@ protocol Babysitter {
 //:
 //: __2c.__ Test your code by creating an instance of the Animal class and calling the methods frolick() and curlIntoSmallBall().
 enum Size {
-    case Tiny, Small, Medium, Large, XLarge
+    case tiny, small, medium, large, xLarge
 }
 protocol Adorable {
     var size: Size { get }
@@ -103,7 +103,7 @@ class Friend {
         return "Here, I'll walk backwards down the stairs and hold the heavy end."
     }
     
-    func loadVan(empty: Bool) -> Bool {
+    func loadVan(_ empty: Bool) -> Bool {
         print("We can totally fit a king size bed in here.")
         var isEmpty = empty
         isEmpty = false
@@ -121,7 +121,7 @@ struct Tail {
 }
 
 protocol Hoarder {
-    func cache(foodItem: String) -> String
+    func cache(_ foodItem: String) -> String
     func pilfer() -> String
 }
 
@@ -137,7 +137,7 @@ class Squirrel: Hoarder {
         return "Run away!"
     }
     
-    func cache(foodItem: String) -> String {
+    func cache(_ foodItem: String) -> String {
         return "I'll be back for you later, little \(foodItem)s."
     }
     
@@ -166,8 +166,8 @@ class ScrubJay {
 
 // Example
 protocol Souschef {
-    func chop(vegetable: String) -> String
-    func rinse(vegetable: String) -> String
+    func chop(_ vegetable: String) -> String
+    func rinse(_ vegetable: String) -> String
 }
 
 class Roommate {
@@ -181,11 +181,11 @@ class Roommate {
 }
 
 extension Roommate: Souschef {
-    func chop(vegetable: String) -> String {
+    func chop(_ vegetable: String) -> String {
         return "She's choppin' \(vegetable)!"
     }
     
-    func rinse(vegetable: String) -> String {
+    func rinse(_ vegetable: String) -> String {
         return "The \(vegetable) is so fresh and so clean"
     }
 }

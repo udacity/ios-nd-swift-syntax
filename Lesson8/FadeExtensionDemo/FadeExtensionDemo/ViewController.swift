@@ -18,9 +18,9 @@ class ViewController: UIViewController {
     
     // MARK: Actions
     
-    @IBAction func sunRiseAndSet(sender: AnyObject) {
+    @IBAction func sunRiseAndSet(_ sender: AnyObject) {
         // Fade out
-        UIView.animateWithDuration(1.0, delay: 0.0, options: UIViewAnimationOptions.CurveEaseIn, animations: {
+        UIView.animate(withDuration: 1.0, delay: 0.0, options: UIViewAnimationOptions.curveEaseIn, animations: {
             self.imageView.alpha = 0.0
             }, completion: {
                 (finished: Bool) -> Void in
@@ -33,7 +33,7 @@ class ViewController: UIViewController {
                 }
                 
                 // Fade in
-                UIView.animateWithDuration(1.0, delay:0.0, options:UIViewAnimationOptions.CurveEaseIn, animations: {
+                UIView.animate(withDuration: 1.0, delay:0.0, options:UIViewAnimationOptions.curveEaseIn, animations: {
                     self.imageView.alpha = 1.0
                     }, completion: nil)
         })

@@ -11,13 +11,13 @@ import UIKit
 //:Rewrite the sorting closure expression to be as concise as possible.
 // 1
 var surnames = ["Silverman", "Fey", "Whig", "Schumer", "Kaling"]
-let orderedSurnames = surnames.sort({(name1: String, name2: String) -> Bool in
+let orderedSurnames = surnames.sorted(isOrderedBefore: {(name1: String, name2: String) -> Bool in
     return name2 > name1
 })
 
 // 2
 let battingAverages = [0.302, 0.556, 0.280, 0.500, 0.281, 0.285]
-let sortedAverages = battingAverages.sort({(average1: Double, average2: Double) -> Bool in
+let sortedAverages = battingAverages.sorted(isOrderedBefore: {(average1: Double, average2: Double) -> Bool in
     return average2 > average1
 })
 
@@ -59,14 +59,14 @@ let pricesInRupees = [750, 825, 2000, 725]
 //:
 //:Use the map() method to transform the group members' racing times. Using the oldTimes array and the two helper functions provided below, create a new array of String values called goalTimes. Assume it's been 13 years since graduation.
 
-func timeIntervalFromString(timeString: String) -> Int {
-    var timeArray = timeString.componentsSeparatedByString(":")
+func timeIntervalFromString(_ timeString: String) -> Int {
+    var timeArray = timeString.components(separatedBy: ":")
     let minutes = Int(String(timeArray[0]))!
     let seconds = Int(String(timeArray[1]))!
     return seconds + (minutes * 60)
 }
 
-func timeStringFromInterval(timeInterval: Int) -> NSString {
+func timeStringFromInterval(_ timeInterval: Int) -> NSString {
     let seconds = timeInterval % 60
     let minutes = (timeInterval/60) % 60
     return NSString(format: "%.1d:%.2d",minutes,seconds)

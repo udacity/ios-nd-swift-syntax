@@ -24,7 +24,7 @@ var nonsenseArray = ["bungalow", "buffalo", "indigo", "although", "Ontario", "al
 
 //: __3b.__ Write a for-in loop that checks each character of a string to see if it is a member of the "digits" set. Use the .unicodeScalars property to access all the characters in a string. Hint: the method longCharacterIsMember may come in handy.
 
-let digits = NSCharacterSet.decimalDigitCharacterSet()
+let digits = CharacterSet.decimalDigits
 
 //: __Problem 4__
 //:

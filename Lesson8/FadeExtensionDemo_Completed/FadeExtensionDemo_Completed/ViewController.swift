@@ -18,7 +18,7 @@ class ViewController: UIViewController {
     
     // MARK: Actions
     
-    @IBAction func sunRiseAndSet(sender: AnyObject) {
+    @IBAction func sunRiseAndSet(_ sender: AnyObject) {
         // Fade out
         imageView.fadeOut(1.0, delay: 0.0, completion: {
             (finished: Bool) -> Void in

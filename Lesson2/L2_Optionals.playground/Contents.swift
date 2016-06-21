@@ -8,7 +8,7 @@ var x: Int
 
 // Object references can't store nil values either
 var c: AnyObject
-c = UIColor.redColor()
+c = UIColor.red()
 //c = nil
 
 //: ### Cool! Except, sometimes we need nil values.
@@ -162,7 +162,7 @@ class BetterViewController: UIViewController {
 //: ### Optionals can be passed as parameters to functions
 
 // Example: Picking up groceries in an optional car
-func pickUpGroceries(car:Car?) {
+func pickUpGroceries(_ car:Car?) {
     if let car = car {
         print("We'll pick up the groceries in the \(car.model)")
     } else {
@@ -176,7 +176,7 @@ pickUpGroceries(someCar)
 pickUpGroceries(nil)
 
 // Example: Hosting a guest in an optional extra room
-func host(guest: String, extraRoom: Room?) {
+func host(_ guest: String, extraRoom: Room?) {
     if let extraRoom = extraRoom {
         print("Come stay with us, \(guest), you can sleep in the \(extraRoom.name).")
     } else {
