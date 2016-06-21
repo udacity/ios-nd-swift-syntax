@@ -18,7 +18,7 @@ let yourSillySentence = "TODO: Incorporate randomly chosen objects from the noun
 //: Recreate the shoutString by using the didYouKnowString as a stem.
 
 let didYouKnowString = "Did you know that the Swift String class comes with lots of useful methods?"
-let whisperString = "psst" + ", " + didYouKnowString.lowercaseString
+let whisperString = "psst" + ", " + didYouKnowString.lowercased()
 let shoutString =  "HEY! DID YOU KNOW THAT THE SWIFT STRING CLASS COMES WITH LOTS OF USEFUL METHODS?"
 
 //Solution
@@ -46,7 +46,7 @@ let word = "fortunate"
 
 
 // Solution
-if word.rangeOfString("tuna") != nil {
+if word.range(of: "tuna") != nil {
     print("yes")
 }
 //: ### Exercise 6
@@ -54,12 +54,12 @@ if word.rangeOfString("tuna") != nil {
 let lottaLikes = "If like, you wanna learn Swift, like, you should build lots of small apps, cuz it's like, a good way to practice."
 
 // Solution
-let noLikes = lottaLikes.stringByReplacingOccurrencesOfString("like, ", withString: "")
+let noLikes = lottaLikes.replacingOccurrences(of: "like, ", with: "")
 //: ### Exercise 7
 // Example
 let sillyMonkeyString = "A monkey stole my iPhone"
-let newString = sillyMonkeyString.stringByReplacingOccurrencesOfString("monkey", withString: "🐒")
-let newerString = newString.stringByReplacingOccurrencesOfString("iPhone", withString: "📱")
+let newString = sillyMonkeyString.replacingOccurrences(of: "monkey", with: "🐒")
+let newerString = newString.replacingOccurrences(of: "iPhone", with: "📱")
 
 //: Repeat the above string manipulation, but this time using a for-in loop.
 //: You can start off with this dictionary and string.
@@ -68,7 +68,7 @@ var newestString = sillyMonkeyString
 
 // Solution
 for (key, value) in dictionary {
-    newestString = newestString.stringByReplacingOccurrencesOfString(key, withString: value)
+    newestString = newestString.replacingOccurrences(of: key, with: value)
 }
 
 print(newestString)
@@ -122,9 +122,9 @@ var currentElevation: Int
 //: 10a) Imagine you are writing a quiz app, and you need to program a timer that will stop a quiz after 20 min. Declare four entities: startTime, currentTime, maximumTimeAllowed, and timeRemaining. Don't worry about encoding their values.
 
 // Solution
-let startTime: NSDate
+let startTime: Date
 let maximumTimeAllowed: Double
-var currentTime: NSDate
+var currentTime: Date
 var timeRemaining: Double
 //: 10b) Imagine you are writing an app for a credit card company. Declare two entities: creditLimit and balance.
 

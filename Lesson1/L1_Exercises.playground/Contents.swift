@@ -17,7 +17,7 @@ let yourSillySentence = "TODO: Incorporate randomly chosen objects from the noun
 //: ### Exercise 2
 //: Recreate the shoutString by using the didYouKnowString as a stem.
 let didYouKnowString = "Did you know that the Swift String class comes with lots of useful methods?"
-let whisperString = "psst" + ", " + didYouKnowString.lowercaseString
+let whisperString = "psst" + ", " + didYouKnowString.lowercased()
 let shoutString =  "HEY! DID YOU KNOW THAT THE SWIFT STRING CLASS COMES WITH LOTS OF USEFUL METHODS?"
 //: ### Exercise 3
 //: How many characters are in this string? 
@@ -35,8 +35,8 @@ let lottaLikes = "If like, you wanna learn Swift, like, you should build lots of
 //: ### Exercise 7
 // Example
 let sillyMonkeyString = "A monkey stole my iPhone"
-let newString = sillyMonkeyString.stringByReplacingOccurrencesOfString("monkey", withString: "🐒")
-let newerString = newString.stringByReplacingOccurrencesOfString("iPhone", withString: "📱")
+let newString = sillyMonkeyString.replacingOccurrences(of: "monkey", with: "🐒")
+let newerString = newString.replacingOccurrences(of: "iPhone", with: "📱")
 //: Repeat the above string manipulation, but this time using a for-in loop.
 //: You can start off with this dictionary and string.
 let dictionary = ["monkey": "🐒", "iPhone":"📱"]
