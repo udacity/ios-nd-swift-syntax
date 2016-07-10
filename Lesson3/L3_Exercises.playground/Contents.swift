@@ -29,8 +29,7 @@ var admitted = ["Jennifer", "Vijay", "James"]
 var waitingList = ["Lyla", "Daniel", "Isabel", "Eric"]
 //: ### Exercise 7
 //: Using subscript syntax, print out the 2nd and 3rd names from the admitted array.
-// Solution
-print("second: \(admitted[1]), third: \(admitted[2])")
+
 //: ## Dictionary initialization
 
 //: ### Exercise 8
