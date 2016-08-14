@@ -98,7 +98,7 @@ class Cyclist {
     }
     
     func brake() {
-        speed--
+        speed -= 1
     }
     
     func pedalFaster(factor: Double) {
