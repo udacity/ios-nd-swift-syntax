@@ -80,7 +80,7 @@ var artist = paintingDict[painting]
 //    print ("\(artist) painted \(painting)")
 //}
 //else {
-//    print("No director found")
+//    print("No artist found")
 //}
 //: ### Exercise 6
 //: Set the width of the cancel button below.  Notice that the cancelButton variable is declared as an implicitly unwrapped optional.

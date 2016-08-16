@@ -80,7 +80,7 @@ macchiato.steamedMilk
 //
 //    var maneuverability: Double {
 //        get {
-//            return agility - speed/5)
+//            return agility - speed/5
 //        }
 //    }
 //
@@ -91,7 +91,7 @@ macchiato.steamedMilk
 //    }
 //
 //    func brake() {
-//        speed--
+//        speed -= 1
 //    }
 //
 //    func pedalFaster(factor: Double) {
