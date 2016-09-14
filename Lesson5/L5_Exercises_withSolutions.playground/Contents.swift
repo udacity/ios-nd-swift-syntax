@@ -42,7 +42,7 @@ let digits = CharacterSet.decimalDigits
 // Solution
 func digitsOnly(_ word: String) -> Bool {
     for character in word.unicodeScalars {
-        if !digits.contains(UnicodeScalar(character.value)) {
+        if !digits.contains(UnicodeScalar(character.value)!) {
             return false
         }
     }
