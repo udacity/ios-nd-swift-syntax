@@ -62,7 +62,7 @@ animalGroupsDict
 // Updating a value
 animalGroupsDict["monkeys"] = "barrel"
 var group = animalGroupsDict.updateValue("gaggle", forKey: "geese")
-group.dynamicType
+type(of: group)
 
 animalGroupsDict.updateValue("crash", forKey:"rhinoceroses")
 print(animalGroupsDict)
