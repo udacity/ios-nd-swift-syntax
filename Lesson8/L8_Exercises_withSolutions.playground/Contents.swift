@@ -11,9 +11,9 @@ import Foundation
 //:
 //: __1c.__ Test your code by creating an instance of the Teenager class and calling the methods playCandyland() and read().
 enum Level {
-    case Low
-    case Medium
-    case High
+    case low
+    case medium
+    case high
 }
 
 class Teenager: Babysitter {  // Solution: 1a
@@ -27,7 +27,7 @@ class Teenager: Babysitter {  // Solution: 1a
         self.patience = patience
     }
     // Solution: 1b
-    func playCandyland(numberOfTimes: Int) {
+    func playCandyland(_ numberOfTimes: Int) {
         var count = 0
         while count < numberOfTimes {
             print("We made it to the Candy Castle!")
@@ -35,7 +35,7 @@ class Teenager: Babysitter {  // Solution: 1a
         }
      }
     
-    func read(book: String, firstLine: String, asleep: Bool) -> Bool {
+    func read(_ book: String, firstLine: String, asleep: Bool) -> Bool {
         print("Of course, we can read \(book) again. \(firstLine)...")
         var isAsleep = asleep
         isAsleep = true
@@ -44,12 +44,12 @@ class Teenager: Babysitter {  // Solution: 1a
 }
 
 protocol Babysitter {
-    func playCandyland(numberOfTimes: Int)
-    func read(book: String, firstLine: String, asleep: Bool) -> Bool
+    func playCandyland(_ numberOfTimes: Int)
+    func read(_ book: String, firstLine: String, asleep: Bool) -> Bool
 }
 
 // Solution: 1c
-var bestBabysitter = Teenager(age: 15, responsible: true, patience: .High)
+var bestBabysitter = Teenager(age: 15, responsible: true, patience: .high)
 bestBabysitter.playCandyland(15)
 bestBabysitter.read("Yertle the Turtle", firstLine: "On the faraway island of Sala-ma-sond, Yertle the Turtle was king of the pond", asleep: false)
 
@@ -63,7 +63,7 @@ bestBabysitter.read("Yertle the Turtle", firstLine: "On the faraway island of Sa
 //:
 //: __2c.__ Test your code by creating an instance of the Animal class and calling the methods frolick() and curlIntoSmallBall().
 enum Size {
-    case Tiny, Small, Medium, Large, XLarge
+    case tiny, small, medium, large, xLarge
 }
 protocol Adorable {
     var size: Size { get }
@@ -79,7 +79,7 @@ class Animal: Adorable { //Solution: 2a
     let species: String
     let numberOfLegs: Int
     // Solution: 2b
-    var size = Size.Tiny
+    var size = Size.tiny
     var softFur = true
     
     init(species: String, numberOfLegs: Int) {
@@ -111,7 +111,7 @@ protocol Mover {
     var willWorkForPizzaAndBeer: Bool { get }
 
     func carryCouch() -> String
-    func loadVan(empty: Bool) -> Bool
+    func loadVan(_ empty: Bool) -> Bool
 }
 
 class Friend: Mover { // Solution: 3b
@@ -138,7 +138,7 @@ class Friend: Mover { // Solution: 3b
         return "Here, I'll walk backwards down the stairs and hold the heavy end."
     }
     
-    func loadVan(empty: Bool) -> Bool {
+    func loadVan(_ empty: Bool) -> Bool {
         print("We can totally fit a king size bed in here.")
         var isEmpty = empty
         isEmpty = false
@@ -156,7 +156,7 @@ struct Tail {
 }
 
 protocol Hoarder {
-    func cache(foodItem: String) -> String
+    func cache(_ foodItem: String) -> String
     func pilfer() -> String
 }
 
@@ -172,7 +172,7 @@ class Squirrel: Hoarder {
        return "Run away!"
     }
     
-    func cache(foodItem: String) -> String {
+    func cache(_ foodItem: String) -> String {
         return "I'll be back for you later little \(foodItem)s."
     }
     
@@ -194,7 +194,7 @@ class ScrubJay : Hoarder {
         return "Swoop!"
     }
     // Solution
-    func cache(foodItem: String) -> String {
+    func cache(_ foodItem: String) -> String {
         return "I won't forget about you little \(foodItem)s."
     }
     
@@ -210,8 +210,8 @@ class ScrubJay : Hoarder {
 
 // Example
 protocol Souschef {
-    func chop(vegetable: String) -> String
-    func rinse(vegetable: String) -> String
+    func chop(_ vegetable: String) -> String
+    func rinse(_ vegetable: String) -> String
 }
 
 class Roommate {
@@ -225,11 +225,11 @@ class Roommate {
 }
 
 extension Roommate: Souschef {
-    func chop(vegetable: String) -> String {
+    func chop(_ vegetable: String) -> String {
         return "She's choppin' \(vegetable)!"
     }
     
-    func rinse(vegetable: String) -> String {
+    func rinse(_ vegetable: String) -> String {
         return "The \(vegetable) is so fresh and so clean"
     }
 }

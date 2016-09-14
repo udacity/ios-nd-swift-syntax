@@ -89,7 +89,7 @@ class FluffyDog {
         self.droolFactor = droolFactor
     }
 
-    func chase(wheeledVehicle: String)-> String {
+    func chase(_ wheeledVehicle: String)-> String {
         return "Where are you going, \(wheeledVehicle)? Wait for me! No, don't go! I will catch you!"
     }
 }
@@ -105,9 +105,9 @@ goodDog.chase("skateboarder")
 //: __4a.__
 //: Write an instance method, bark(), that returns a different string based on the value of the stored property, size.
 enum Size: Int {
-    case Small
-    case Medium
-    case Large
+    case small
+    case medium
+    case large
 }
 
 class ChattyDog {
@@ -122,25 +122,25 @@ class ChattyDog {
     }
     
     //Solution: 4a
-    func bark(size: Size) -> String {
+    func bark(_ size: Size) -> String {
         switch size {
-        case .Small:
+        case .small:
             return "yip yip"
-        case .Medium:
+        case .medium:
             return "arf arf"
-        case .Large:
+        case .large:
             return "woof woof"
         }
     }
     
     //Solution: 4c
-    static func speak(size: Size) -> String {
+    static func speak(_ size: Size) -> String {
         switch size {
-        case .Small:
+        case .small:
             return "yip yip"
-        case .Medium:
+        case .medium:
             return "arf arf"
-        case .Large:
+        case .large:
             return "woof woof"
         }
     }
@@ -151,21 +151,21 @@ class ChattyDog {
 //: __4c.__
 //: Rewrite the method, bark(), as a type method and rename it speak(). Call your type method to test it out.
 //Solution: 4b & 4c
-var barkingDog = ChattyDog(name:"Kupar", breed:"Schnauser", size: .Medium)
+var barkingDog = ChattyDog(name:"Kupar", breed:"Schnauser", size: .medium)
 barkingDog.bark(barkingDog.size)
-ChattyDog.speak(.Medium)
+ChattyDog.speak(.medium)
 //: __Problem 5__
 //:
 //:__5a.__
 //: Write an initialization method for the House class below.
 enum Quality {
-    case Poor, Fair, Good, Excellent
+    case poor, fair, good, excellent
 }
 
 enum NaturalDisaster {
-    case Earthquake
-    case Wildfire
-    case Hurricane
+    case earthquake
+    case wildfire
+    case hurricane
 }
 
 class House {
@@ -176,7 +176,7 @@ class House {
     var worthyOfAnOffer: Bool {
         get {
             switch (numberOfBedrooms, location) {
-            case (2, .Excellent), (3, .Good), ( 3, .Excellent):
+            case (2, .excellent), (3, .good), ( 3, .excellent):
                 return true
             default:
                 return false
@@ -190,13 +190,13 @@ class House {
         self.location = location
     }
     
-    func willStayStanding(naturalDisaster:NaturalDisaster)-> Bool {
+    func willStayStanding(_ naturalDisaster:NaturalDisaster)-> Bool {
         switch naturalDisaster {
-        case .Earthquake:
+        case .earthquake:
             return true
-        case .Wildfire:
+        case .wildfire:
             return true
-        case .Hurricane:
+        case .hurricane:
             return false
         }
     }
@@ -205,8 +205,8 @@ class House {
 //: __5b.__
 //: Create an instance of the House class and use it to call the method, willStayStanding().  This method takes in a parameter of type NaturalDisaster and return a Bool indicating whether the house will stay standing in a given natural disaster.
 // Solution: 5b
-let dreamHouse = House(numberOfBedrooms: 3, location: .Excellent)
-dreamHouse.willStayStanding(.Earthquake)
+let dreamHouse = House(numberOfBedrooms: 3, location: .excellent)
+dreamHouse.willStayStanding(.earthquake)
 dreamHouse.worthyOfAnOffer
 
 //: __5c.__

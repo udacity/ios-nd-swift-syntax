@@ -10,7 +10,7 @@ import UIKit
 var word = "bologna"
 
 // Solution
-var lastLetter = word.removeAtIndex(word.endIndex.predecessor())
+var lastLetter = word.remove(at: word.index(before: word.endIndex))
 
 //: __Problem 2__
 //:
@@ -18,10 +18,10 @@ var lastLetter = word.removeAtIndex(word.endIndex.predecessor())
 var nonsenseArray = ["bungalow", "buffalo", "indigo", "although", "Ontario", "albino", "%$&#!"]
 
 // Solution
-func combineLastCharacters(wordArray:[String]) -> String {
+func combineLastCharacters(_ wordArray:[String]) -> String {
     var newWord = ""
     for var word in wordArray {
-        let lastCharacter = word.removeAtIndex(word.endIndex.predecessor())
+        let lastCharacter = word.remove(at: word.index(before: word.endIndex))
         newWord.append(lastCharacter)
     }
     return newWord
@@ -38,11 +38,11 @@ combineLastCharacters(nonsenseArray)
 //: __3a.__ Write a signature for a function that takes in a String and returns a Bool
 
 //: __3b.__ Write a for-in loop that checks each character of a string to see if it is a member of the "digits" set. Use the .unicodeScalars property to access all the characters in a string. Hint: the method longCharacterIsMember may come in handy.
-let digits = NSCharacterSet.decimalDigitCharacterSet()
+let digits = CharacterSet.decimalDigits
 // Solution
-func digitsOnly(word: String) -> Bool {
+func digitsOnly(_ word: String) -> Bool {
     for character in word.unicodeScalars {
-        if !digits.longCharacterIsMember(character.value) {
+        if !digits.contains(UnicodeScalar(character.value)!) {
             return false
         }
     }
@@ -55,7 +55,7 @@ func digitsOnly(word: String) -> Bool {
 let dirtyWordsArray = ["phooey", "darn", "drat", "blurgh", "jupiters", "argh", "fudge"]
 
 // Solution
-func cleanUp(dirtyArray: [String]) -> [String] {
+func cleanUp(_ dirtyArray: [String]) -> [String] {
     var cleanArray = [String]()
     for word in dirtyArray {
         if word.characters.count == 4 {
@@ -75,7 +75,7 @@ cleanUp(dirtyWordsArray)
 var movies:Dictionary<String,String> = [ "Boyhood":"Richard Linklater","Inception":"Christopher Nolan", "The Hurt Locker":"Kathryn Bigelow", "Selma":"Ava Du Vernay", "Interstellar":"Christopher Nolan"]
 
 class MovieArchive {
-    func filterByDirector(currentDirector:String, movies: Dictionary<String, String>) -> [String] {
+    func filterByDirector(_ currentDirector:String, movies: Dictionary<String, String>) -> [String] {
         var filteredArray = [String]()
         for (movie, director) in movies {
             if director == currentDirector {

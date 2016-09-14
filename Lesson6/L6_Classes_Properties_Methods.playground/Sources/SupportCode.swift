@@ -20,7 +20,7 @@ class Movie {
 class MovieArchive {
     var movies:[Movie]
     
-    func filterByYear(year:Int, movies: [Movie]) -> [Movie] {
+    func filterByYear(_ year:Int, movies: [Movie]) -> [Movie] {
         var filteredArray = [Movie]()
         for movie in movies {
             if movie.releaseYear == year {

@@ -21,40 +21,40 @@ var rapperPhoneNumbers = ["Azealia Banks":"(212)548-8777", "Boots Riley":"(415)7
 //: ### Exercise 5
 //: Below is an if statement determining what team to cheer for given a sport.
 enum Sport {
-    case Baseball, Basketball, Football, Hockey, Soccer
+    case baseball, basketball, football, hockey, soccer
 }
 
-var sport = Sport.Baseball
+var sport = Sport.baseball
 
-if sport == .Baseball {
+if sport == .baseball {
     print("Go A's!")
-} else if sport == .Basketball {
+} else if sport == .basketball {
     print("Go Warriors!")
-} else if sport == .Football {
+} else if sport == .football {
     print( "Go Raiders!")
-} else if sport == .Hockey {
+} else if sport == .hockey {
     print("Go Sharks!")
-} else if sport == .Soccer {
+} else if sport == .soccer {
     print("Go Earthquakes!")
 }
 //: ### Exercise 6
 //: Below is an enum and an if-else statement for implementing the game Rock-Paper-Scissors.
 enum roshamboMove {
-    case Rock, Paper, Scissors
+    case rock, paper, scissors
 }
 
-var myMove = roshamboMove.Scissors
-var yourMove = roshamboMove.Scissors
+var myMove = roshamboMove.scissors
+var yourMove = roshamboMove.scissors
 
 var resultsMessage = ""
 
-if myMove == .Rock && yourMove == .Paper || myMove == .Paper && yourMove == .Rock {
+if myMove == .rock && yourMove == .paper || myMove == .paper && yourMove == .rock {
     resultsMessage = "Paper covers Rock."
 } else if myMove == yourMove {
     resultsMessage = "It's a tie!"
-} else if myMove == .Rock && yourMove == .Scissors || myMove == .Scissors && yourMove == .Rock {
+} else if myMove == .rock && yourMove == .scissors || myMove == .scissors && yourMove == .rock {
     resultsMessage = "Rock crushes Scissors. "
-} else if myMove == .Paper && yourMove == .Scissors || myMove == .Scissors && yourMove == .Paper {
+} else if myMove == .paper && yourMove == .scissors || myMove == .scissors && yourMove == .paper {
     resultsMessage = "Scissors cut Paper."
 }
 
@@ -76,14 +76,15 @@ if 90...100 ~= score {
 }
 //: ### Exercise 8
 //: The if-else statement below translates a word into Pig Latin. Without using the "vowels" array, write an equivalent switch statement.
+
 var word = "can"
-var firstLetter = Array(word.characters)[0]
+var firstLetter = word[word.startIndex]
 var newWord = ""
 var vowels: [Character] = ["a", "e", "i", "o", "u"]
 
 if vowels.contains(firstLetter) {
     newWord = word + "yay"
 } else {
-    word.removeAtIndex(word.startIndex)
+    word.remove(at: word.startIndex)
     newWord = "\(word)\(firstLetter)ay"
 }

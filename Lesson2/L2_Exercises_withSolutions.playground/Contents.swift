@@ -98,7 +98,7 @@ var childViewController = UIViewController()
 // TODO: Safely unwrap childViewController.parentViewController
 
 // Solution
-if let parentVC = childViewController.parentViewController {
+if let parentVC = childViewController.parent {
     print("Here's the parentViewController")
 } else {
     print("No parents, let's party!")

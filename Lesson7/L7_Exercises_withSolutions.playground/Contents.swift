@@ -4,10 +4,10 @@
 //:
 //: At the end of the code snippet below, what is the value of macchiato.steamedMilk when EspressoDrink is implemented as a struct? What about when EspressoDrink is implemented as a class?
 enum Amount {
-    case None
-    case Splash
-    case Some
-    case Alot
+    case none
+    case splash
+    case some
+    case alot
 }
 
 struct EspressoDrink {
@@ -22,9 +22,9 @@ struct EspressoDrink {
     }
 }
 
-var macchiato = EspressoDrink(numberOfShots: 2, steamedMilk: .None, foam: true)
+var macchiato = EspressoDrink(numberOfShots: 2, steamedMilk: .none, foam: true)
 var espressoForGabrielle = macchiato
-espressoForGabrielle.steamedMilk = .Splash
+espressoForGabrielle.steamedMilk = .splash
 macchiato.steamedMilk
 
 // Solution
@@ -40,7 +40,7 @@ macchiato.steamedMilk
 //: Associate an Int value with each finger.
 // Solution
 enum Finger: Int {
-    case Thumb, Index, Middle, Ring, Pinky
+    case thumb, index, middle, ring, pinky
 }
 
 //: __Problem 3__
@@ -55,11 +55,11 @@ struct Window {
 }
 
 enum WritingImplement {
-    case Pen
-    case Pencil
-    case Marker
-    case Crayon
-    case Chalk
+    case pen
+    case pencil
+    case marker
+    case crayon
+    case chalk
 }
 
 struct Material {
@@ -101,15 +101,15 @@ class Cyclist {
         speed -= 1
     }
     
-    func pedalFaster(factor: Double) {
+    func pedalFaster(_ factor: Double) {
         speed * factor
     }
 }
 
 enum Size: String {
-    case Small = "8 ounces"
-    case Medium = "12 ounces"
-    case Large = "16 ounces"
+    case small = "8 ounces"
+    case medium = "12 ounces"
+    case large = "16 ounces"
 }
 
 //: __Problem 4__
@@ -169,10 +169,10 @@ struct Cookie {
 //: Create an instance of your BnBListing class and call one of its methods.
 // Example Solution
 enum Housing {
-    case Mansion
-    case Apartment
-    case Shack
-    case House
+    case mansion
+    case apartment
+    case shack
+    case house
 }
 
 class BnBListing {
@@ -192,7 +192,7 @@ class BnBListing {
     }
 }
 
-let beachBungalow = BnBListing(category: .Shack, price: 20, capacity: 2, available: true)
+let beachBungalow = BnBListing(category: .shack, price: 20, capacity: 2, available: true)
 beachBungalow.book()
 beachBungalow.available
 

@@ -7,7 +7,7 @@ import UIKit
 let encouragement = "You can do it!"
 //: ### Use var when you expect the value to change
 var personalizedEncouragement = "You can do it, Lauren!"
-personalizedEncouragement = personalizedEncouragement.stringByReplacingOccurrencesOfString("Lauren", withString: "Cameron")
+personalizedEncouragement = personalizedEncouragement.replacingOccurrences(of: "Lauren", with: "Cameron")
 //: ### Example 2a
 let birthYear = 2008
 var currentYear = 2015

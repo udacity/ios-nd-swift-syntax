@@ -22,7 +22,7 @@ abs(negativeSeven)
 let array = ["A", "13", "B","5","87", "t", "41"]
 
 class Arithmetic {
-    func sumOfStrings(aBunchOfStrings: [String]) -> Int {
+    func sumOfStrings(_ aBunchOfStrings: [String]) -> Int {
         let array = aBunchOfStrings
         var sum = 0
         for string in array {
@@ -42,7 +42,7 @@ class Arithmetic {
 
 let stringToReverse = "Mutable or Immutable? That is the question."
 
-func reverseString(stringToReverse: String) {
+func reverseString(_ stringToReverse: String) {
     var reversedString = ""
     for character in stringToReverse.characters {
         reversedString = "\(character)" + reversedString
@@ -58,7 +58,7 @@ func reverseString(stringToReverse: String) {
 //: ## Practice writing function definitions 
 //: Example 1 - firstCharacterOf
 // TODO: Write the firstCharacterOf function here.
-func firstCharacterOf(word word: String)-> Character {
+func firstCharacterOf(word: String)-> Character {
     return word[word.startIndex]
 }
 
@@ -67,10 +67,10 @@ firstCharacterOf(word: "Mom")
 
 //: Example 2 - placeFirstLetterLast
 // TODO: Write placeFirstLetterLast function here. 
-func placeFirstLetterLast(myString: String) -> String {
+func placeFirstLetterLast(_ myString: String) -> String {
     var newString = myString
     newString.append(firstCharacterOf(word: myString))
-    newString.removeAtIndex(myString.startIndex)
+    newString.remove(at: myString.startIndex)
     return newString
 }
 

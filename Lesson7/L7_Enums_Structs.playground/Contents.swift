@@ -2,41 +2,41 @@
 import UIKit
 //: ### Defining an Enumeration
 enum PrimaryColor {
-    case Red
-    case Blue
-    case Yellow
+    case red
+    case blue
+    case yellow
 }
 
 enum Aunties {
-    case Aime, Billie, Diane, Gail, Janie, Pam
+    case aime, billie, diane, gail, janie, pam
 }
 
 enum AmericanLeagueWest: String {
-    case As = "Oakland"
-    case Astros = "Houston"
-    case Angels = "Los Angeles"
-    case Mariners = "Seattle"
-    case Rangers = "Arlington"    
+    case athletics = "Oakland"
+    case astros = "Houston"
+    case angels = "Los Angeles"
+    case mariners = "Seattle"
+    case rangers = "Arlington"
 }
 
-var message = "I hope the A's stay in \(AmericanLeagueWest.As.rawValue)"
+var message = "I hope the A's stay in \(AmericanLeagueWest.athletics.rawValue)"
 
 //: Enums and switch statements go hand in hand.
 enum CaliforniaPark {
-    case Yosemite, DeathValley, Lasson, Sequoia
+    case yosemite, deathValley, lasson, sequoia
 }
 
 var warning = ""
-var destination = CaliforniaPark.Yosemite
+var destination = CaliforniaPark.yosemite
 
 switch destination {
-    case .Yosemite:
+    case .yosemite:
         warning = "Beware of aggressive bears!"
-    case .DeathValley:
+    case .deathValley:
         warning = "Beware of dehydration!"
-    case .Lasson:
+    case .lasson:
         warning = "Watch out for boiling pools!"
-    case .Sequoia:
+    case .sequoia:
         warning = "Watch out for falling trees!"
 }
 
@@ -72,7 +72,7 @@ struct Beer {
         }
     }
  
-    static func cheers(language: String) {
+    static func cheers(_ language: String) {
         if let cheers = cheersDict[language] {
             print("\(cheers)")
         }
@@ -127,10 +127,10 @@ classyFrameForMom.height = 7
 //    let sides = [3,4,5]
 //}
 
-//_____ UIImagePickerControllerSourceType : Int {    
-//    case PhotoLibrary
-//    case Camera
-//    case SavedPhotosAlbum
+// _____ UIImagePickerControllerSourceType : Int {
+//    case photoLibrary
+//    case camera
+//    case savedPhotosAlbum
 //}
 
 //_____ Name {
@@ -139,10 +139,10 @@ classyFrameForMom.height = 7
 //}
 
 //_____ Subject {
-//    case Math
-//    case English
-//    case Spanish
-//    case Science
+//    case math
+//    case english
+//    case spanish
+//    case science
 //}
 
 //_____ Student {

@@ -23,21 +23,21 @@ class DinnerCrew {
 }
 
 protocol Souschef {
-    func chop(vegetable: String) -> String
-    func rinse(vegetable:String) -> String
+    func chop(_ vegetable: String) -> String
+    func rinse(_ vegetable:String) -> String
 }
 
 var deviousDinnerCrew = DinnerCrew(members: [Minion]())
 
 // Problem 3
 protocol DogWalker {
-    func throwBall(numberOfTimes:Int) -> Int
+    func throwBall(_ numberOfTimes:Int) -> Int
     func rubBelly()
 }
 
 class Neighbor: DogWalker {
     
-    func throwBall(numberOfTimes:Int) {
+    func throwBall(_ numberOfTimes:Int) {
         var count = 0
         while count < numberOfTimes {
             print("Go get it!")

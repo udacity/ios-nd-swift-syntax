@@ -26,11 +26,11 @@ print(spaniels.count)
 
 var colors = ["red", "orange", "yellow", "green", "blue", "violet"]
 // Solution
-colors.insert("indigo", atIndex: 5)
+colors.insert("indigo", at: 5)
 //: ### Exercise 4
 //: Insert "English Cocker" into the spaniels array so that its index is before "English Springer".
 // Solution
-spaniels.insert("English Cocker", atIndex: 2)
+spaniels.insert("English Cocker", at: 2)
 //: ### Exercise 5
 //: Append "Barcelona" to the end of the olympicHosts array.
 var olympicHosts = ["London", "Beijing","Athens", "Sydney", "Atlanta"]
@@ -41,7 +41,7 @@ olympicHosts.append("Barcelona")
 var admitted = ["Jennifer", "Vijay", "James"]
 var waitingList = ["Lyla", "Daniel", "Isabel", "Eric"]
 // Solution
-var name = waitingList.removeAtIndex(0)
+var name = waitingList.remove(at: 0)
 admitted.append(name)
 //: ### Exercise 7
 //: Using subscript syntax, print out the 2nd and 3rd names from the admitted array.
@@ -71,7 +71,7 @@ print(presidentialPetsDict)
 //: ### Exercise 10
 //: Remove the entry for "George Bush" and replace it with an entry for "George W. Bush".
 // Solution
-var oldValue = presidentialPetsDict.removeValueForKey("George Bush")
+var oldValue = presidentialPetsDict.removeValue(forKey: "George Bush")
 presidentialPetsDict["George W. Bush"] = oldValue
 //: ### Exercise 11
 //: We've initialized a new dictionary of presidentialDogs with the entries from presidentialPets. Update the entry for Bill Clinton by replacing "Socks" the cat with "Buddy" the dog.

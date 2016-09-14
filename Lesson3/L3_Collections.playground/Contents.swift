@@ -28,9 +28,9 @@ var circuit = [livingRoomSwitch, kitchenSwitch, bathroomSwitch]
 //: ### Array operations: append, insert, remove, count, retrieve
 var roadTripMusic = ["Neil Young","Kendrick Lamar","Flo Rida", "Nirvana"]
 roadTripMusic.append("Rae Sremmurd")
-roadTripMusic.insert("Dej Loaf", atIndex: 2)
-roadTripMusic.removeAtIndex(3)
-roadTripMusic.insert("Keith Urban", atIndex: 3)
+roadTripMusic.insert("Dej Loaf", at: 2)
+roadTripMusic.remove(at: 3)
+roadTripMusic.insert("Keith Urban", at: 3)
 roadTripMusic.count
 
 let musician = roadTripMusic[2]
@@ -43,7 +43,7 @@ var groupsDict = [String:String]()
 var animalGroupsDict = ["whales":"pod", "geese":"flock", "lions": "pride"]
 
 // Another example
-var averageLifeSpanDict = [String:Range<Int>]()
+var averageLifeSpanDict = [String:CountableRange<Int>]()
 var lifeSpanDict = ["African Grey Parrot": 50...70, "Tiger Salamander": 12...15, "Bottlenose Dolphin": 20...30]
 
 //: ### Dictionary operations: insert, remove, count, update, retrieve
@@ -62,7 +62,7 @@ animalGroupsDict
 // Updating a value
 animalGroupsDict["monkeys"] = "barrel"
 var group = animalGroupsDict.updateValue("gaggle", forKey: "geese")
-group.dynamicType
+type(of: group)
 
 animalGroupsDict.updateValue("crash", forKey:"rhinoceroses")
 print(animalGroupsDict)

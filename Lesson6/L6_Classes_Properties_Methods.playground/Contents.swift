@@ -17,7 +17,7 @@ class Movie {
 class MovieArchive {
     var movies:[Movie]
     
-    func filterByYear(year:Int) -> [Movie] {
+    func filterByYear(_ year:Int) -> [Movie] {
         var filteredArray = [Movie]()
         for movie in self.movies {
             if movie.releaseYear == year {
@@ -79,7 +79,7 @@ var firstMovie = movie[0]
 print("\(firstMovie.title)")
 
 //: ### Calling Type methods
-UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.PhotoLibrary)
+UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.photoLibrary)
 
 
 
