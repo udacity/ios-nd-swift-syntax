@@ -11,23 +11,23 @@ import UIKit
 //:Rewrite the sorting closure expression to be as concise as possible.
 // 1
 var surnames = ["Silverman", "Fey", "Whig", "Schumer", "Kaling"]
-let orderedSurnames = surnames.sorted(isOrderedBefore: {(name1: String, name2: String) -> Bool in
+let orderedSurnames = surnames.sorted(by: {(name1: String, name2: String) -> Bool in
     return name2 > name1
 })
 
 //Solution
-let reversedSurnames = surnames.sorted(isOrderedBefore: {
+let reversedSurnames = surnames.sorted(by: {
    $0 > $1
 })
 
 // 2
 let battingAverages = [0.302, 0.556, 0.280, 0.500, 0.281, 0.285]
-let sortedAverages = battingAverages.sorted(isOrderedBefore: {(average1: Double, average2: Double) -> Bool in
+let sortedAverages = battingAverages.sorted(by: {(average1: Double, average2: Double) -> Bool in
     return average2 > average1
 })
 
 // Solution
-let reversedAverages = battingAverages.sorted(isOrderedBefore: {
+let reversedAverages = battingAverages.sorted(by: {
     $0 > $1
 })
 
