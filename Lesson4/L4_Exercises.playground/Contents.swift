@@ -76,8 +76,9 @@ if 90...100 ~= score {
 }
 //: ### Exercise 8
 //: The if-else statement below translates a word into Pig Latin. Without using the "vowels" array, write an equivalent switch statement.
+
 var word = "can"
-var firstLetter = Array(word.characters)[0]
+var firstLetter = word[word.startIndex]
 var newWord = ""
 var vowels: [Character] = ["a", "e", "i", "o", "u"]
 

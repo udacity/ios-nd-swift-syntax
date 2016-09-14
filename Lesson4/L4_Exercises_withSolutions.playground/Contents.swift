@@ -161,7 +161,7 @@ default:
 //: The if-else statement below translates a word into Pig Latin. Without using the "vowels" array, write an equivalent switch statement.
 
 var word = "can"
-var firstLetter = Array(word.characters)[0]
+var firstLetter = word[word.startIndex]
 var newWord = ""
 var vowels: [Character] = ["a", "e", "i", "o", "u"]
 
@@ -173,6 +173,7 @@ if vowels.contains(firstLetter) {
 }
 
 // Solution
+word = "can"
 switch firstLetter {
 case "a", "e", "i", "o", "u":
     newWord = word + "yay"
