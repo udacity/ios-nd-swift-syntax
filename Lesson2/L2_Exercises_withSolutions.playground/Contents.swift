@@ -93,13 +93,13 @@ cancelButton = UIBarButtonItem()
 cancelButton.width = 50
 // Properties of implicitly unwrapped optionals are set like any old property, because implicitly unwrapped optionals unwrap automatically.
 //: ### Exercise 7 
-//: The class UIViewController has a property called parentViewController.  The parentViewController property is an optional of type UIViewController?. We can't always be sure that a given view controller has a parentViewController.  Safely unwrap the parentViewController property below using if let.
+//: The class UIViewController has a property called parent.  The parent property is an optional of type UIViewController?. We can't always be sure that a given view controller has a parent view controller.  Safely unwrap the parent property below using if let.
 var childViewController = UIViewController()
-// TODO: Safely unwrap childViewController.parentViewController
+// TODO: Safely unwrap childViewController.parent
 
 // Solution
 if let parentVC = childViewController.parent {
-    print("Here's the parentViewController")
+    print("Here's the parent view controller")
 } else {
     print("No parents, let's party!")
 }

@@ -53,6 +53,6 @@ var cancelButton: UIBarButtonItem!
 cancelButton = UIBarButtonItem()
 // TODO: Set the width of the cancel button.
 //: ### Exercise 7
-//: The class UIViewController has a property called parentViewController.  The parentViewController property is an optional of type UIViewController?. We can't always be sure that a given view controller has a parentViewController.  Safely unwrap the parentViewController property below using if let.
+//: The class UIViewController has a property called parent.  The parent property is an optional of type UIViewController?. We can't always be sure that a given view controller has a parent view controller.  Safely unwrap the parent property below using if let.
 var childViewController = UIViewController()
-// TODO: Safely unwrap childViewController.parentViewController
+// TODO: Safely unwrap childViewController.parent
