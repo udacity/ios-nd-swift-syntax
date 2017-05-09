@@ -71,6 +71,7 @@ var currentElevation: Int
 //: 10a) Imagine you are writing a quiz app, and you need to program a timer that will stop a quiz after 20 min. Declare four entities: startTime, currentTime, maximumTimeAllowed, and timeRemaining. Don't worry about encoding their values.
 
 //: 10b) Imagine you are writing an app for a credit card company. Declare two entities: creditLimit and balance.
+
 //: ### Exercise 11
 //: Below is the code to reverse a string. Have a look at the entities declared: stringToReverse and reversedString. Choose whether to declare each with let or var. When you're finished uncomment the code and see if the compiler agrees with your choices!
 //let or var stringToReverse = "Mutable or Immutable? That is the question." //TODO:Choose let or var
