@@ -20,7 +20,7 @@ class ViewController: UIViewController {
     
     @IBAction func sunRiseAndSet(sender: AnyObject) {
         // Fade out
-        imageView.fadeOut(1.0, delay: 0.0, completion: {
+        imageView.fadeOut(duration: 1.0, delay: 0.0, completion: {
             (finished: Bool) -> Void in
             
             //Once the imageView is invisible, set the image property to a new value
@@ -31,7 +31,7 @@ class ViewController: UIViewController {
             }
             
             // Then fade the image back in
-            self.imageView.fadeIn(1.0, delay: 0.0, completion: nil)
+            self.imageView.fadeIn(duration: 1.0, delay: 0.0, completion: nil)
         })
     }
 }

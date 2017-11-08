@@ -77,7 +77,7 @@ let pricesInRupees = [750, 825, 2000, 725]
 
 // Solution
     let pricesInDollars = pricesInRupees.map({(price: Int) -> String in
-    var dollars = price/64
+    let dollars = price/64
     return "$\(dollars)"
 })
 
@@ -107,7 +107,7 @@ var oldTimes = ["5:18", "5:45", "5:56", "5:25", "5:27"]
 var goalTimes = oldTimes.map(){(time: String) -> String in
     var totalSeconds = timeIntervalFromString(time)
     totalSeconds += 13
-    var goalTimeString = timeStringFromInterval(totalSeconds)
+    let goalTimeString = timeStringFromInterval(totalSeconds)
     return goalTimeString as String
 }
 
