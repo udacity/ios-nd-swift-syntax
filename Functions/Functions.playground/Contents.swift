@@ -44,7 +44,7 @@ let stringToReverse = "Mutable or Immutable? That is the question."
 
 func reverseString(_ stringToReverse: String) {
     var reversedString = ""
-    for character in stringToReverse.characters {
+    for character in stringToReverse {
         reversedString = "\(character)" + reversedString
     }
     print(reversedString)
