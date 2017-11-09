@@ -1,0 +1,39 @@
+//: ### Raw Values
+//: Before looking at associated values, remember that enums can have raw values which are applied to every case. In the example below, each play speed has a raw integer value. Because explicit raw values have not been specified, the raw values begin at 0 (slow) and end with 3 (custom).
+enum PlaySpeed: Int {
+    case slow, normal, fast, custom
+}
+
+print(PlaySpeed.slow.rawValue)
+print(PlaySpeed.custom.rawValue)
+//: Recall, raw values are immutable (constant) and cannot be changed.
+let mySpeed = PlaySpeed.slow
+// mySpeed.rawValue = 3 /* causes an error */
+//: If an enum uses raw string values, then each case is implicitly assigned a raw string value equal to the case's name.
+enum Pace: String {
+    case slow, normal, fast, custom
+}
+
+print(Pace.slow.rawValue)
+print(Pace.custom.rawValue)
+//: Raw values can be set explicitly.
+enum Power: Int {
+    case weak = 10, medium = 20, strong = 30
+}
+
+print(Power.weak.rawValue)
+print(Power.strong.rawValue)
+//: If some raw values are explicitly specified, but not others, then values are assigned in increasing order. When integers are used, implicitly assigned raw values are 1 greater than the previous raw value.
+enum Endurance: Int {
+    case abysmal = 10, weak, medium, strong = 30
+}
+
+print(Endurance.weak.rawValue)
+print(Endurance.strong.rawValue)
+//: It is possible to create an enum from a raw value. This is useful when a value is generated, and it should represent an enum.
+let moderateStrength = Power(rawValue: 20)
+//: Since there is no guarantee that a random value has a corresponding raw value for an enum, you should initialize the enum in a safe way.
+if let myPace = Pace(rawValue: "custom") {
+    print(myPace)
+}
+//: [Next](@next)
