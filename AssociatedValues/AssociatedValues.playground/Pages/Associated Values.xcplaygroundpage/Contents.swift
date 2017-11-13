@@ -1,6 +1,7 @@
 //: [Previous](@previous)
 //: ### Associated Values
-//: Associated values are defined alongside enum cases. Note, associated values are not required, and some cases may have associated values while others do not. In the example below, `LibraryFee` has three cases with associated values and one without an associated value.
+//: Associated values are defined alongside enum cases. Associated values are not required, and some cases may have associated values while others do not. In the example below, `LibraryFee` has three cases with associated values and a case without an associated value.
+//:
 enum LibraryFee {
     case overdueBook(Int)
     case lostBook(Double)
@@ -10,6 +11,7 @@ enum LibraryFee {
 
 let fee = LibraryFee.overdueBook(4)
 //: It can be very helpful to name associated values so that their intent is easily understood.
+//:
 enum DescriptiveLibraryFee {
     case overdueBook(days: Int)
     case lostBook(price: Double)
@@ -19,6 +21,7 @@ enum DescriptiveLibraryFee {
 
 let weekLateFee = DescriptiveLibraryFee.overdueBook(days: 7)
 //: If all enums cases have a single associated value of the same type, consider using a raw value instead.
+//:
 enum PlaySpeedAssociated {
     case slow(value: Int)
     case normal(value: Int)
@@ -30,6 +33,7 @@ enum PlaySpeedRaw: Int {
     case slow, normal, fast, custom
 }
 //: It is possible to define multiple associated values for a single case.
+//:
 import UIKit
 
 enum ImageFilter {
