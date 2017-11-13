@@ -1,3 +1,4 @@
+//: [Previous](@previous)
 //: ### Raw Values
 //: Before looking at associated values, remember that enums can have raw values which are applied to every case. In the example below, each play speed has a raw integer value. Because explicit raw values have not been specified, the raw values begin at 0 (slow) and end with 3 (custom).
 //:
@@ -38,7 +39,7 @@ print(Endurance.strong.rawValue)
 //: - Callout(Watch Out!):
 //: Avoid specifying explicit raw values out of increasing order. It can be confusing to read and cause errors if raw values are used more than once.
 //:
-/* Uncomment `case g` to see error. */
+/* uncomment `case g` to see error. */
 enum LetterToInt: Int {
     case a = 4, b, c, d, e = 2, f
     // case g /* compiler tries to implicitly set `g = 4` which fails */

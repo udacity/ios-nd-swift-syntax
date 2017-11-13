@@ -49,7 +49,7 @@ default:
 //: - Callout(Watch Out!):
 //: Remember, switch statements must be exhaustive or Xcode will complain.
 //:
-// Uncomment the switch statement below to see Xcode complain about a non-exhaustive switch statement.
+// uncomment the switch statement below to see Xcode complain about a non-exhaustive switch statement.
 /*
 switch filter1 {
 case .horizontalGradient(var color1, let color2):
@@ -84,7 +84,7 @@ default:
 //: - Callout(Watch Out!):
 //: Xcode will complain if an associated value is extracted, but not used.
 //:
-// Comment the print statement with `color1` to see Xcode complain about an unused associated value.
+// comment the print statement with `color1` to see Xcode complain about an unused associated value.
 switch filter1 {
 case .horizontalGradient(let color1, _):
     print("a horizontal gradient with...")
