@@ -92,7 +92,7 @@ case .horizontalGradient(let color1, _):
 default:
     break
 }
-//: Because switch statements use pattern matching, complex matches are possible with the `where` keyword.
+//: Associated values may also be extracted based on conditions specified using the `where` keyword. If all conditions are held, then the associated values are extracted and the case statement is executed.
 //:
 switch filter1 {
 case .horizontalGradient(let color1, _) where color1 == .white:
