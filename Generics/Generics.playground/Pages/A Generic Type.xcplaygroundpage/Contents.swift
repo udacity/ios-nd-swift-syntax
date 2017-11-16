@@ -35,16 +35,16 @@ protocol Animal {
     static var emoji: String { get }
 }
 
-struct Zebra: Animal {
+struct Whale: Animal {
     let name: String
-    static let commonName = "Zebra"
-    static let emoji = "🦓"
+    static let commonName = "Whale"
+    static let emoji = "🐳"
 }
 
-struct Squid: Animal {
+struct Dolphin: Animal {
     let name: String
-    static let commonName = "Squid"
-    static let emoji = "🦑"
+    static let commonName = "Dolphin"
+    static let emoji = "🐬"
 }
 
 struct ZooExhibit<AnimalType: Animal> {
@@ -58,37 +58,37 @@ struct ZooExhibit<AnimalType: Animal> {
     }
 }
 
-let exhibit1 = ZooExhibit(animals: [Zebra(name: "Sheila"), Zebra(name: "Zeek")])
+let exhibit1 = ZooExhibit(animals: [Whale(name: "Wendy"), Whale(name: "Wu")])
 exhibit1.tourTheExhibit()
 
 // the verbose syntax can be used to specify the concrete type
-let exhibit2 = ZooExhibit<Squid>(animals: [Squid(name: "Phil"), Squid(name: "Phineas")])
+let exhibit2 = ZooExhibit<Dolphin>(animals: [Dolphin(name: "Dilbert"), Dolphin(name: "Dezeri")])
 exhibit2.tourTheExhibit()
 //: - Callout(Watch Out!):
 //: A single generic type can only be substituted with one concrete type. If Xcode is unable to determine the concrete type that should be substituted for a generic type, it will complain.
 //:
-// which type should be used? squid or zebra? Xcode isn't sure, so it complains
-//let exhibit3 = ZooExhibit(animals: [Squid(name: "Sheila"), Zebra(name: "Zeek")])
+// which type should be used? whale or dolphin? Xcode isn't sure, so it complains
+//let exhibit3 = ZooExhibit(animals: [Whale(name: "Wilber"), Dolphin(name: "Daphnie")])
 //: Extensions can be combined with generics for truly powerful effects. With an extension, it is possible to specify functionality that should only apply to a generic type when the concrete type meets inherits from a specific protocol.
 //:
 protocol Feedable {
     static var favoriteFood: String { get }
 }
 
-extension Zebra: Feedable {
-    static let favoriteFood = "carrots"
+extension Dolphin: Feedable {
+    static let favoriteFood = "🐟"
 }
 
 extension ZooExhibit where AnimalType: Feedable {
     func feedTheAnimals() {
         for animal in animals {
-            print("You feed \(animal.name) \(AnimalType.emoji) \(AnimalType.favoriteFood).")
+            print("You feed \(animal.name) \(AnimalType.emoji) some \(AnimalType.favoriteFood).")
         }
     }
 }
 
-exhibit1.feedTheAnimals()
+exhibit2.feedTheAnimals()
 
-// because `Squid` is not `Feedable`, `feedTheAnimals()` doesn't exist for the squid exhibit
-//exhibit2.feedTheAnimals()
+// because `Whale` is not `Feedable`, the `feedTheAnimals()` function doesn't exist for the whale exhibit
+//exhibit1.feedTheAnimals()
 //: [Next](@next)

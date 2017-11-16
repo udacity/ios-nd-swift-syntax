@@ -10,6 +10,31 @@ func printCombineTypesOf<Type1, Type2>(a: Type1, b: Type2) {
 printCombineTypesOf(a: "abc", b: 4)
 printCombineTypesOf(a: 3, b: false)
 printCombineTypesOf(a: "ios", b: "android")
+//: Swift dictionaries use multiple generic types; one type for keys, one type of values.
+//:
+var bandMembers: [String: Int] = [
+    "🎷": 6,
+    "🎸": 1,
+    "🎺": 4,
+    "🎻": 12
+]
+
+// the verbose syntax
+var fruitMap: Dictionary<String, String> = [
+    "apple": "the round fruit of a tree of the rose family",
+    "orange": "a round juicy citrus fruit with a tough bright reddish-yellow rind",
+    "strawberry": "a sweet soft red fruit with a seed-studded surface"
+]
+//: Regardless of a dictionary's types (keys and values), they always behave the same.
+//:
+print(fruitMap.count)
+print(bandMembers.count)
+
+fruitMap["grape"] = "a berry, typically green (classified as white), purple, red, or black, growing in clusters on a grapevine, eaten as fruit, and used in making wine"
+bandMembers["🎤"] = 1
+
+print(fruitMap.keys)
+print(bandMembers.keys)
 //: With multiple generic types, the same rules apply for generic constraints.
 //:
 // `Type1` must implement the `UnsignedInteger` protocol
@@ -21,7 +46,8 @@ let unsignedInt: UInt = 4
 print(combineUInt(unsignedInt, withString: "zebras"))
 
 // the first argument must be a type which implements `UnsignedInteger`
-//combineUInt(4, withString: "horses")
+let integer = 4
+//combineUInt(integer, withString: "horses")
 //: Below, is an example with multiple generic types called `DualExhibit`. Note, this is just a teaching example; in practice, an implementation for `DualExhibit` might differ based on application needs.
 //:
 protocol Animal {
@@ -30,16 +56,16 @@ protocol Animal {
     static var emoji: String { get }
 }
 
-struct Zebra: Animal {
+struct Whale: Animal {
     let name: String
-    static let commonName = "Zebra"
-    static let emoji = "🦓"
+    static let commonName = "Whale"
+    static let emoji = "🐳"
 }
 
-struct Squid: Animal {
+struct Dolphin: Animal {
     let name: String
-    static let commonName = "Squid"
-    static let emoji = "🦑"
+    static let commonName = "Dolphin"
+    static let emoji = "🐬"
 }
 
 struct DualExhibit<A1: Animal, A2: Animal> {
@@ -54,14 +80,14 @@ struct DualExhibit<A1: Animal, A2: Animal> {
 }
 
 let exhibit1 = DualExhibit(
-    group1: [Zebra(name: "Sheila"), Zebra(name: "Zeek")],
-    group2: [Squid(name: "Phil"), Squid(name: "Phineas")]
+    group1: [Whale(name: "Warren"), Whale(name: "Winona")],
+    group2: [Dolphin(name: "Diego"), Dolphin(name: "Dawud")]
 )
 exhibit1.tourTheExhibit()
 
 // the verbose initialization syntax can still be used
-let exhibit2 = DualExhibit<Zebra, Squid>(
-    group1: [Zebra(name: "Zelda"), Zebra(name: "Zach")],
-    group2: [Squid(name: "Spongebob"), Squid(name: "Patrick")]
+let exhibit2 = DualExhibit<Whale, Dolphin>(
+    group1: [Whale(name: "Wayne"), Whale(name: "Wit")],
+    group2: [Dolphin(name: "Diana"), Dolphin(name: "Demetria")]
 )
 exhibit2.tourTheExhibit()

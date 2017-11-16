@@ -1,6 +1,6 @@
 //: [Previous](@previous)
 //: ### Subclass a Generic Type
-//: A generic type can be subclassed, assuming it is a class. To setup the following example, the `Animal`, `Zebra`, and `ZooExhibit` types are defined.
+//: A generic type can be subclassed, assuming it is a class. To setup the following example, the `Animal`, `Whale`, and `ZooExhibit` types are defined.
 //:
 protocol Animal {
     var name: String { get }
@@ -8,10 +8,10 @@ protocol Animal {
     static var emoji: String { get }
 }
 
-struct Zebra: Animal {
+struct Whale: Animal {
     let name: String
-    static let commonName = "Zebra"
-    static let emoji = "🦓"
+    static let commonName = "Whale"
+    static let emoji = "🐳"
 }
 
 class ZooExhibit<AnimalType: Animal> {
@@ -46,7 +46,7 @@ class TravelingExhibit<A: Animal>: ZooExhibit<A> {
     }
 }
 
-let exhibit1 = TravelingExhibit(location: "Oakland Zoo", animals: [Zebra(name: "Sheila"), Zebra(name: "Zeek")])
+let exhibit1 = TravelingExhibit(location: "Oakland Zoo", animals: [Whale(name: "Watson"), Whale(name: "Wren")])
 exhibit1.tourTheExhibit()
 
 // change exhibit location
