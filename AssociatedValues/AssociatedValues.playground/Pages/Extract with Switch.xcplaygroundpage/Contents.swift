@@ -1,6 +1,6 @@
 //: [Previous](@previous)
 //: ### Extract with Switch
-//: To use associated values, they must be extracted. See the following examples for different extraction techniques.
+//: To use an associated value, it must be extracted. See the following examples for different extraction techniques.
 //:
 import UIKit
 
@@ -13,7 +13,7 @@ enum ImageFilter {
 
 let filter1 = ImageFilter.horizontalGradient(from: .gray, to: .black)
 let filter2 = ImageFilter.horizontalGradient(from: .white, to: .black)
-//: Most often, associated values are extracted in a switch block. For cases with associated values, the `let` keyword followed by a name will extract the associated value from an enum.
+//: Most often, associated values are extracted in a switch block. For cases that have an associated value, the `let` keyword followed by a name will extract each  value from an associated value.
 //:
 switch filter1 {
 case .sepia:
@@ -29,7 +29,7 @@ case .sketch(let penThickness):
         print("sketch using default thickness")
     }
 }
-//: If it is possible to treat two cases exactly the same, even with associated values, then you can combine cases. Note, the associated values must be the same types.
+//: If it is possible to treat two cases exactly the same, even when they have associated values, then you can combine cases. Note, the associated values must be the same type.
 //:
 switch filter1 {
 case .verticalGradient(let color1, let color2), .horizontalGradient(let color1, let color2):
@@ -37,7 +37,7 @@ case .verticalGradient(let color1, let color2), .horizontalGradient(let color1, 
 default:
     break
 }
-//: Associated values can also be extracted as variables using the `var` keyword. Associated values extracted as variables are only available in the case where they are declared.
+//: Associated values can also be extracted as variables using the `var` keyword. Values extracted as variables are only available in the case where they are declared.
 //:
 switch filter1 {
 case .horizontalGradient(var color1, let color2):
@@ -57,7 +57,7 @@ case .horizontalGradient(var color1, let color2):
     print("horizontal gradient with \(color1) and \(color2)")
 }
 */
-//: To extract all associated values for a single case as constants, use the `case let` syntax.
+//: To extract all values from an associated value as constants, use the `case let` syntax.
 //:
 switch filter1 {
 case let .horizontalGradient(color1, color2):
@@ -65,7 +65,7 @@ case let .horizontalGradient(color1, color2):
 default:
     break
 }
-//: If associated values are not needed for computation, they can be ignored. The example below ignores both associated values for the horiztonal gradient.
+//: If associated values are not needed for computation, then they can be ignored. The example below ignores the associated value for the horizontal gradient.
 //:
 switch filter1 {
 case .horizontalGradient:
@@ -73,7 +73,7 @@ case .horizontalGradient:
 default:
     break
 }
-//: It is also possible to ignore one associated value while extracting another.
+//: It is also possible to partially ignore values in an associated value, while extracting others.
 //:
 switch filter1 {
 case .horizontalGradient(let color1, _):
@@ -82,9 +82,9 @@ default:
     break
 }
 //: - Callout(Watch Out!):
-//: Xcode will complain if an associated value is extracted, but not used.
+//: Note, Xcode will complain if a value is extracted, but not used.
 //:
-// comment the print statement with `color1` to see Xcode complain about an unused associated value.
+// comment the print statement with `color1` to see Xcode complain about an unused  value.
 switch filter1 {
 case .horizontalGradient(let color1, _):
     print("a horizontal gradient with...")
@@ -92,7 +92,7 @@ case .horizontalGradient(let color1, _):
 default:
     break
 }
-//: Associated values may also be extracted based on conditions specified using the `where` keyword. If all conditions are held, then the associated values are extracted and the case statement is executed.
+//: Associated values may also be extracted based on conditions specified using the `where` keyword. If all conditions are held, then the values are extracted and the case statement is executed.
 //:
 switch filter1 {
 case .horizontalGradient(let color1, _) where color1 == .white:

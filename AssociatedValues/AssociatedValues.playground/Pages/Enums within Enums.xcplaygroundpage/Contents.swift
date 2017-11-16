@@ -1,6 +1,6 @@
 //: [Previous](@previous)
 //: ### Enums within Enums
-//: Associated values can themselves be enums. This makes for some interesting combinations — enums within enums within enums...
+//: An associated value can be an enum that defines more associated values. This makes for some interesting combinations — enums within enums within enums...
 //:
 import UIKit
 
@@ -16,7 +16,7 @@ enum ImageFilter {
 }
 
 let normalSketch = ImageFilter.sketch(penThickness: .normal)
-//: While enums with enums may feel extraneous, it can map nicely to real-world situations. Imagine a clothing app needs a simple search feature. It could be implemented with enums and associated values.
+//: While enums within enums may feel extraneous, it can map nicely to real-world situations. Imagine a clothing app that needs a simple search feature. It could be implemented using enums within enums.
 //:
 enum ShirtSizes {
     case extraSmall

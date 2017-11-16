@@ -28,7 +28,7 @@ enum Power: Int {
 
 print(Power.weak.rawValue)
 print(Power.strong.rawValue)
-//: If some raw values are explicitly specified, but not others, then values are assigned in increasing order. When integers are used, implicitly assigned raw values are 1 greater than the previous raw value.
+//: If some raw integer values are explicitly provided, but others are not, then implicit values are assigned as one greater than the previous raw integer value.
 //:
 enum Endurance: Int {
     case abysmal = 10, weak, medium, strong = 30
@@ -37,7 +37,7 @@ enum Endurance: Int {
 print(Endurance.weak.rawValue)
 print(Endurance.strong.rawValue)
 //: - Callout(Watch Out!):
-//: Avoid specifying explicit raw values out of increasing order. It can be confusing to read and cause errors if raw values are used more than once.
+//: Avoid specifying explicit raw values out of increasing order. It can be confusing to read and cause errors if Xcode tries to use a raw value more than once.
 //:
 /* uncomment `case g` to see error. */
 enum LetterToInt: Int {
