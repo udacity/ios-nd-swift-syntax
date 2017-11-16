@@ -1,6 +1,6 @@
 //: [Previous](@previous)
 //: ### Handle Errors
-//: The errors referred to by "error handling" are outside of a developer's control. They are unlike compiler warnings or errors warnings which are avoidable.
+//: The errors referred to by "error handling" are not like warnings or issues raised by Xcode and the compiler. They are also not [software bugs](https://en.wikipedia.org/wiki/Software_bug). Instead, these errors are either intentionally caused or generated in situations where correct behavior cannot be fully guaranteed.
 //:
 func exampleFunction() {
     //let unusedConstant = 2 /* this constant is unused and will generate a compiler warning
@@ -10,7 +10,7 @@ func exampleFunction() {
 //:
 //: **```init(contentsOf url: URL, encoding enc: String.Encoding) throws```**
 //:
-//: It is possible that the contents of the URL cannot be read into a string because of issues outside the developer's control. For example, the URL (path) may refer to a location that doesn't exist. This doesn't make the initializer invalid, but it does mean that it is prone to, and could generate, an error. Hence, the `throw` keyword. `throw` informs a developer that a function (or initializer) can generate an error and that it must be called according to Swift's error handling rules.
+//: It is possible that the contents of the URL cannot be read into a string because the file isn't a text file — even if it is named like one. Or perhaps the URL (path) refers to a location that doesn't exist. This doesn't make the initializer invalid, but it does mean that it is prone to, and could generate, an error. Hence, the `throw` keyword. `throw` informs a developer that a function (or initializer) can generate an error and that it must be called according to Swift's error handling rules.
 //:
 
 //: To call a function that throws errors, a `do`-`catch` statement may be used. The `do`-`catch` statement is composed of two blocks: `do` and `catch`. The `do` block safely executes error-prone code, but it requires all error-prone calls to use the `try` keyword. If an error is thrown by any function in the `do` block, then the `catch` block is executed.
@@ -37,7 +37,7 @@ if let fileURL = Bundle.main.url(forResource: "swift", withExtension: "png") {
         print("ERROR: oh no! there was a problem")
     }
 }
-//: The `catch` block implicitly defines an `Error` constant called "error" that can be used to determine more information about the cause of the problem.
+//: When a catch block is executed, it automatically defines a constant called "error". This constant is of type `NSError` which provides helpful information about the cause of the problem. `NSError` also implements the `Error` protocol which means that it has a handy localized description that can be used for debugging.
 //:
 if let fileURL = Bundle.main.url(forResource: "swift", withExtension: "png") {
     do {
@@ -45,6 +45,7 @@ if let fileURL = Bundle.main.url(forResource: "swift", withExtension: "png") {
         print(content)
     } catch {
         print("\(error)") // notice, error is implicitly defined
+        print("\(error.localizedDescription)")
     }
 }
 //: For readability, the "error" constant can be explicitly defined using `catch let error`.
@@ -94,7 +95,7 @@ if let fileURL = Bundle.main.url(forResource: "swift", withExtension: "png") {
         print("\(error)")
     }
 }
-//: Alternatively, errors can be caught by type using the `catch is` syntax. By default, all errors extend from `NSError` which provides helpful information for troubleshooting. For example, `NSError` has a string property called "domain" which helps classifies the origin of an error. Also, an error's domain suggests if an error can be casted into a more specific type like `CocoaError`, `POSIXError`, or `MachError`. See [Apple's documentation on error objects, domains, and codes](https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/ErrorHandlingCocoa/ErrorObjectsDomains/ErrorObjectsDomains.html) to learn more.
+//: Alternatively, errors can be caught by type using the `catch is` syntax. Remember, by default, all errors extend from `NSError` which provides helpful information for troubleshooting. For example, `NSError` has a string property called "domain" which helps classifies the origin of an error. Also, an error's domain suggests if an error can be casted into a more specific type like `CocoaError`, `POSIXError`, or `MachError`. See [Apple's documentation on error objects, domains, and codes](https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/ErrorHandlingCocoa/ErrorObjectsDomains/ErrorObjectsDomains.html) to learn more.
 //:
 if let fileURL = Bundle.main.url(forResource: "swift", withExtension: "png") {
     // create a url that does not exist
@@ -174,7 +175,7 @@ if let fileURL = Bundle.main.url(forResource: "swift", withExtension: "png") {
 //: Multiple error-prone functions or initializers may be called within a `do` block. But, this makes identifying the cause of the error more difficult.
 //:
 if let fileURL = Bundle.main.url(forResource: "swift", withExtension: "txt") {
-    
+    // create urls that don't exist
     let directoryWithFileURL = fileURL.deletingLastPathComponent()
     let badURL1 = directoryWithFileURL.appendingPathComponent("unknown-file-1")
     let badURL2 = directoryWithFileURL.appendingPathComponent("unknown-file-2")
