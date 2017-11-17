@@ -37,7 +37,7 @@ if let fileURL = Bundle.main.url(forResource: "swift", withExtension: "png") {
         print("ERROR: oh no! there was a problem")
     }
 }
-//: When a catch block is executed, it automatically defines a constant called "error". This constant is of type `NSError` which provides helpful information about the cause of the problem. `NSError` also implements the `Error` protocol which means that it has a handy localized description that can be used for debugging.
+//: When a catch block is executed, it automatically defines a constant called "error". This constant is of type `Error` and it has a localized description property with helpful information about the cause of the problem.
 //:
 if let fileURL = Bundle.main.url(forResource: "swift", withExtension: "png") {
     do {
@@ -95,7 +95,7 @@ if let fileURL = Bundle.main.url(forResource: "swift", withExtension: "png") {
         print("\(error)")
     }
 }
-//: Alternatively, errors can be caught by type using the `catch is` syntax. Remember, by default, all errors extend from `NSError` which provides helpful information for troubleshooting. For example, `NSError` has a string property called "domain" which helps classifies the origin of an error. Also, an error's domain suggests if an error can be casted into a more specific type like `CocoaError`, `POSIXError`, or `MachError`. See [Apple's documentation on error objects, domains, and codes](https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/ErrorHandlingCocoa/ErrorObjectsDomains/ErrorObjectsDomains.html) to learn more.
+//: Alternatively, errors can be caught by type using the `catch is` syntax. As seen before, all errors implement the `Error` protocol. Additionally, all errors extend from `NSError` which provides more information for troubleshooting like a string property called "domain" that classifies the origin of an error. An error's domain may also suggest if the error can be casted into a more specific type like `CocoaError`, `POSIXError`, or `MachError`. See [Apple's documentation on error objects, domains, and codes](https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/ErrorHandlingCocoa/ErrorObjectsDomains/ErrorObjectsDomains.html) to learn more.
 //:
 if let fileURL = Bundle.main.url(forResource: "swift", withExtension: "png") {
     // create a url that does not exist
@@ -111,7 +111,7 @@ if let fileURL = Bundle.main.url(forResource: "swift", withExtension: "png") {
     }
 }
 //: - Callout(Watch Out!):
-//: It is redundant to check if an error is a `NSError`, and it will cause a compiler warning. Remember, all errors automatically extend from `NSError`.
+//: It is redundant to check if an error is a `NSError`, and it will cause a compiler warning. Remember, all errors extend from `NSError`.
 //:
 if let fileURL = Bundle.main.url(forResource: "swift", withExtension: "png") {
     // create a url that does not exist

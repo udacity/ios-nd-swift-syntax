@@ -10,7 +10,7 @@ enum PurchaseError: Error {
     case cartWeightLimitExceeded(Double)
     case insufficientStock(String)
 }
-//: `LocalizedError` includes properties which should be used to provide a localized information about an error. Note, for brevity, all comments for `NSLocalizedString` are left empty. In practice, comments should provide sufficient context about a localized string for accurate translation.
+//: `LocalizedError` includes properties which should be used to provide localized information about an error. Note, for brevity, all comments for `NSLocalizedString` are left empty. In practice, comments should provide sufficient context about a localized string for accurate translation.
 //:
 extension PurchaseError: LocalizedError {
     /// A localized message describing what error occurred.
@@ -75,7 +75,7 @@ do {
     if let recoverySuggestion = error.recoverySuggestion { print(recoverySuggestion) }
     if let helpAnchor = error.helpAnchor { print(helpAnchor) }
 }
-//: Recall, all errors can be casted into a `NSError`. But, by default, the properties of `NSError`, like domain, have inferred values. To provide more accurate values for `NSError` properties, implement `CustomNSError`.
+//: Recall, all errors extend from `NSError`. But, by default, the properties of `NSError`, like domain, have inferred values. To provide more accurate values for `NSError` properties, implement `CustomNSError`.
 //:
 extension PurchaseError: CustomNSError {
     /// The domain of the error.
@@ -114,7 +114,7 @@ extension PurchaseError: CustomNSError {
         }
     }
 }
-//: If an error implements `CustomNSError`, then when casted into a `NSError`, it will contain the values provided by the protocol implementation.
+//: If an error implements `CustomNSError`, then when casted as a `NSError`, it will contain the values provided by the protocol implementation.
 //:
 func attemptPurchase(withWeight weight: Double) throws {
     if weight > 100 {        
