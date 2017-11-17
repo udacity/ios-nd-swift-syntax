@@ -1,6 +1,6 @@
 //: [Previous](@previous)
 //: ### Guard Let Versus If Let
-//: When optional values are used with `guard let` (or `guard var`) they are bound and available as non-optional constants in the rest of the scope where the guard statement appears. When optional values are used with `if let` they are only bound as non-optional constants in the body of the if statement.
+//: When optional values are used with `guard let` (or `guard var`) they are bound as non-optional values and available in the rest of the scope where the guard statement appears. This differs from how optionals work with `if let`. With `if let`, optionals are bound as non-optional constants, and they are only available in the body of the `if let` statement.
 //:
 func takeOff(passengersSeated: Bool, crewReady: Bool, runwayClear: Bool, crewLeader: String?, greeting: String?) {
     guard passengersSeated, crewReady, runwayClear else { return }

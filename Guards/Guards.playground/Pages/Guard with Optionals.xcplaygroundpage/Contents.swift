@@ -52,4 +52,16 @@ func takeOffGuardVar(passengersSeated: Bool, crewReady: Bool, runwayClear: Bool,
 }
 
 takeOffGuardVar(passengersSeated: true, crewReady: true, runwayClear: true, crewLeader: "👩🏻‍✈️ Natalie")
+//: A `guard let` or `guard var` statement can check if an optional is non-nil while ignoring its value. Logically, it is like saying "a value must exist, but I don't care what it is."
+//:
+func takeOffGuardIgnore(passengersSeated: Bool, crewReady: Bool, runwayClear: Bool, crewLeader: String?) {
+    guard passengersSeated, crewReady, runwayClear else { return }
+    // ignore the value, just make sure it exists
+    guard var _ = crewLeader else { return }
+
+    print("Takeoff checks complete!")
+    print("✈️ Lifts off runway")
+}
+
+takeOffGuardIgnore(passengersSeated: true, crewReady: true, runwayClear: true, crewLeader: "👩🏻‍✈️ Natalie")
 //: [Next](@next)
