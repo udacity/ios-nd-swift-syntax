@@ -14,12 +14,12 @@ let mySpeed = PlaySpeed.slow
 // mySpeed.rawValue = 3 /* causes an error */
 //: If an enum uses raw string values, then each case is implicitly assigned a raw string value equal to the case's name.
 //:
-enum Pace: String {
+enum AudioRate: String {
     case slow, normal, fast, custom
 }
 
-print(Pace.slow.rawValue)
-print(Pace.custom.rawValue)
+print(AudioRate.slow.rawValue)
+print(AudioRate.custom.rawValue)
 //: Raw values can be set explicitly.
 //:
 enum Power: Int {
@@ -50,10 +50,10 @@ let moderateStrength = Power(rawValue: 20)
 //: - Callout(Watch Out!):
 //: Since there is no guarantee that a random value has a corresponding raw value, initialize enums from raw values in a safe way.
 //:
-if let myPace = Pace(rawValue: "custom") {
+if let myPace = AudioRate(rawValue: "custom") {
     print(myPace)
 }
 //: Otherwise, initializing an enum from a raw value will return nil.
 //:
-let myPace = Pace(rawValue: "not a real pace")
+let myPace = AudioRate(rawValue: "not a real pace")
 //: [Next](@next)

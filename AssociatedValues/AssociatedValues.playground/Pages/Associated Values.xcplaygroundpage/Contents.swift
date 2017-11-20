@@ -23,15 +23,15 @@ let weekLateFee = DescriptiveLibraryFee.overdueBook(days: 7)
 //: - Callout(Watch Out!):
 //: If all enums cases have an associated value of the same type, consider using a raw value instead.
 //:
-// the associated values for `PlaySpeedAssociated` should be raw values
-enum PlaySpeedAssociated {
+// the associated values for `AudioRateAssociated` should be raw values
+enum AudioRateAssociated {
     case slow(value: Int)
     case normal(value: Int)
     case fast(value: Int)
     case custom(value: Int)
 }
 
-enum PlaySpeedRaw: Int {
+enum AudioRateRaw: Int {
     case slow, normal, fast, custom
 }
 //: Associated values are actually tuples. Therefore, an associated value can contain mutliple values. Recall from [Apple's documentation](https://developer.apple.com/library/content/documentation/Swift/Conceptual/Swift_Programming_Language/TheBasics.html#//apple_ref/doc/uid/TP40014097-CH5-ID329) that tuples are multiple values grouped into a single compound value.
