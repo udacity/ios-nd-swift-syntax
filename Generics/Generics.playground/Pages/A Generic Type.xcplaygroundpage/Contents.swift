@@ -61,7 +61,7 @@ struct ZooExhibit<AnimalType: Animal> {
 let exhibit1 = ZooExhibit(animals: [Whale(name: "Wendy"), Whale(name: "Wu")])
 exhibit1.tourTheExhibit()
 
-// the verbose syntax can be used to specify the concrete type
+// the longhand syntax can be used to specify the concrete type
 let exhibit2 = ZooExhibit<Dolphin>(animals: [Dolphin(name: "Dilbert"), Dolphin(name: "Dezeri")])
 exhibit2.tourTheExhibit()
 //: - Callout(Watch Out!):

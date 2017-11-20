@@ -1,6 +1,6 @@
 //: [Previous](@previous)
 //: ### Subclass a Generic Type
-//: A generic type can be subclassed, assuming it is a class. To setup the following example, the `Animal`, `Whale`, and `ZooExhibit` types are defined.
+//: A generic type can be subclassed, assuming it is a class and not a struct. To setup the following example, the `Animal`, `Whale`, and `ZooExhibit` types are defined.
 //:
 protocol Animal {
     var name: String { get }
@@ -28,7 +28,7 @@ class ZooExhibit<AnimalType: Animal> {
         }
     }
 }
-//: To subclass the generic type `ZooExhibit`, define a new class with a generic type that can be substituted for `ZooExhibit`'s generic type (any type that implements the `Animal` protocol). In the example below, the generic type `A` is constrained such that it must implement the `Animal` protocol. Hence, when `ZooExhibit` is specified as the superclass, the type `A` can be used without error.
+//: To subclass the generic type `ZooExhibit`, one must define a new class with a generic type that can be substituted for `AnimalType` (any type that implements the `Animal` protocol). In the subclass below, the generic type `A` is constrained such that it must implement the `Animal` protocol. Hence, when `ZooExhibit` is specified as the superclass, the type `A` can be used without error.
 //:
 class TravelingExhibit<A: Animal>: ZooExhibit<A> {
     var location: String
@@ -57,10 +57,10 @@ exhibit1.tourTheExhibit()
 //:
 // uncomment the class definition below to see Xcode complain that `TankExhibit`'s generic type `A` does not confirm to the `Animal` protocol.
 /*
-class TankExhibit<A>: ZooExhibit<A> {
+class TankExhibit<B>: ZooExhibit<B> {
     let volume: Double
     
-    init(volume: Double, animals: [A]) {
+    init(volume: Double, animals: [B]) {
         self.volume = volume
         super.init(animals: animals)
     }

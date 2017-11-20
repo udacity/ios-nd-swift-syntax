@@ -19,7 +19,7 @@ var bandMembers: [String: Int] = [
     "🎻": 12
 ]
 
-// the verbose syntax
+// the longhand syntax
 var fruitMap: Dictionary<String, String> = [
     "apple": "the round fruit of a tree of the rose family",
     "orange": "a round juicy citrus fruit with a tough bright reddish-yellow rind",
@@ -33,8 +33,8 @@ print(bandMembers.count)
 fruitMap["grape"] = "a berry, typically green (classified as white), purple, red, or black, growing in clusters on a grapevine, eaten as fruit, and used in making wine"
 bandMembers["🎤"] = 1
 
-print(fruitMap.keys)
-print(bandMembers.keys)
+fruitMap.updateValue("yummy", forKey: "grape")
+bandMembers.updateValue(2, forKey: "🎸")
 //: With multiple generic types, the same rules apply for generic constraints.
 //:
 // `Type1` must implement the `UnsignedInteger` protocol
@@ -85,7 +85,7 @@ let exhibit1 = DualExhibit(
 )
 exhibit1.tourTheExhibit()
 
-// the verbose initialization syntax can still be used
+// the longhand initialization syntax can still be used
 let exhibit2 = DualExhibit<Whale, Dolphin>(
     group1: [Whale(name: "Wayne"), Whale(name: "Wit")],
     group2: [Dolphin(name: "Diana"), Dolphin(name: "Demetria")]

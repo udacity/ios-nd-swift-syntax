@@ -1,6 +1,6 @@
 //: [Previous](@previous)
 //: ### Arrays are Generic
-//: Upon first glance, many do not realize that Swift arrays use generics. Specifically, the type that a Swift array stores is generic — it can be anything. When declaring an array using its more verbose syntax, this becomes apparent.
+//: Upon first glance, many do not realize that Swift arrays use generics. Specifically, the type that a Swift array stores is generic — it can be anything. When declaring an array using its more longhand syntax, this becomes apparent.
 //:
 var intArray: Array<Int> = []
 intArray.append(4)
