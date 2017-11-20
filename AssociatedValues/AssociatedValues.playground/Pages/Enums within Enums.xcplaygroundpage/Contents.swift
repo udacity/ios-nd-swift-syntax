@@ -18,7 +18,7 @@ enum ImageFilter {
 let normalSketch = ImageFilter.sketch(penThickness: .normal)
 //: While enums within enums may feel extraneous, it can map nicely to real-world situations. Imagine a clothing app that needs a simple search feature. It could be implemented using enums within enums.
 //:
-enum ShirtSizes {
+enum ShirtSize {
     case extraSmall
     case small
     case medium
@@ -27,7 +27,7 @@ enum ShirtSizes {
 }
 
 enum Search {
-    case forShirts(sizes: [ShirtSizes])
+    case forShirts(sizes: [ShirtSize])
     case forName(name: String)
 }
 
