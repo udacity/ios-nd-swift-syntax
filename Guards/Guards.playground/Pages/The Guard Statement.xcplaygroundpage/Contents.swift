@@ -26,18 +26,6 @@ takeOff(passengersSeated: true, crewReady: true, runwayClear: true)
     print("✈️ Lifts off runway")
  }
 */
-//: - Callout(Watch Out!):
-//: Guards must exit scope when conditions are not met. If a guard does not exit scope, then Xcode will complain.
-//:
-// uncomment the function below to see Xcode complain that the `passengersSeated` guard does not exit scope
-/*
-func takeOffGuardFailure(passengersSeated: Bool, crewReady: Bool, runwayClear: Bool) {
-    guard passengersSeated else { print("not exiting!") }
-    guard crewReady else { return }
-    guard runwayClear else { return }
-    print("✈️ Lifts off runway")
-}
-*/
 //: Guards can be combined together using commas. This can improve readability, especially in cases where conditions are related.
 //:
 func takeOffCombineGuards(passengersSeated: Bool, crewReady: Bool, runwayClear: Bool) {
@@ -46,6 +34,18 @@ func takeOffCombineGuards(passengersSeated: Bool, crewReady: Bool, runwayClear: 
 }
 
 takeOffCombineGuards(passengersSeated: true, crewReady: true, runwayClear: true)
+//: - Callout(Watch Out!):
+//: Guards must exit scope when conditions are not met. If a guard does not exit scope, then Xcode will complain.
+//:
+// uncomment the function below to see Xcode complain that the `passengersSeated` guard does not exit scope
+/*
+ func takeOffGuardFailure(passengersSeated: Bool, crewReady: Bool, runwayClear: Bool) {
+ guard passengersSeated else { print("not exiting!") }
+ guard crewReady else { return }
+ guard runwayClear else { return }
+ print("✈️ Lifts off runway")
+ }
+ */
 //: Before returning, guards can execute additional code; here, a debug message is printed.
 //:
 func takeOffGuardWithCode(passengersSeated: Bool, crewReady: Bool, runwayClear: Bool) {
