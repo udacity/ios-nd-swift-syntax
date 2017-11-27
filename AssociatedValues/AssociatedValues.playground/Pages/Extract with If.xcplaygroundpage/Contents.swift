@@ -29,6 +29,19 @@ if case let ImageFilter.horizontalGradient(color1, color2) = filter1 {
 if case let ImageFilter.horizontalGradient(_, color2) = filter1, color2 == .black {
     print("the horizontal gradient's second color is \(color2)")
 }
+//: A single associated value can also be extracted as a computed property. By using a computed property, you may avoid duplicate `if case` statements.
+//:
+extension ImageFilter {
+    var hasHeavyPenThickness: Bool {
+        if case let ImageFilter.sketch(penThickness) = self, let thickness = penThickness, thickness > 5.0 {
+            return true
+        } else {
+            return false
+        }
+    }
+}
+
+filter1.hasHeavyPenThickness
 //: To learn more about extraction techniques, read [Pattern Matching, Part 4: if case, guard case, for case](http://alisoftware.github.io/swift/pattern-matching/2016/05/16/pattern-matching-4/) on Crunchy Development.
 //:
 //: [Next](@next)

@@ -31,9 +31,10 @@ print(Power.strong.rawValue)
 //: If some raw integer values are explicitly provided, but others are not, then implicit values are assigned as one greater than the previous raw integer value.
 //:
 enum Endurance: Int {
-    case abysmal = 10, weak, medium, strong = 30
+    case worst, abysmal = 10, weak, medium, strong = 30
 }
 
+print(Endurance.worst.rawValue)
 print(Endurance.weak.rawValue)
 print(Endurance.strong.rawValue)
 //: - Callout(Watch Out!):
