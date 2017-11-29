@@ -25,7 +25,7 @@ struct TypeAnalyzer<T> {
 let x = TypeAnalyzer(value: 2)
 x.analyze()
 
-let view = TypeAnalyzer(value: UIView(frame: CGRect.zero))
+let view = TypeAnalyzer<UIView>(value: UIView(frame: CGRect.zero))
 view.analyze()
 //: Like generic functions, the generic type can be named and constained. In the example below, `ZooExhibit` is defined where its animals property is generic and constrained to any type that implements the `Animal` protocol.
 //:
@@ -68,7 +68,7 @@ exhibit2.tourTheExhibit()
 //: A single generic type can only be substituted with one concrete type. If Xcode is unable to determine the concrete type that should be substituted for a generic type, it will complain.
 //:
 // which type should be used? whale or dolphin? Xcode isn't sure, so it complains
-//let exhibit3 = ZooExhibit(animals: [Whale(name: "Wilber"), Dolphin(name: "Daphnie")])
+// let exhibit3 = ZooExhibit(animals: [Whale(name: "Wilber"), Dolphin(name: "Daphnie")])
 //: Extensions can be combined with generics for truly powerful effects. With an extension, it is possible to specify functionality that should only apply to a generic type when the concrete type meets inherits from a specific protocol.
 //:
 protocol Feedable {

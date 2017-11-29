@@ -74,6 +74,8 @@ do {
     if let failureReason = error.failureReason { print(failureReason) }
     if let recoverySuggestion = error.recoverySuggestion { print(recoverySuggestion) }
     if let helpAnchor = error.helpAnchor { print(helpAnchor) }
+} catch {
+    print(error)
 }
 //: Recall, all errors extend from `NSError`. But, by default, the properties of `NSError`, like domain, have inferred values. To provide more accurate values for `NSError` properties, implement `CustomNSError`.
 //:
@@ -130,5 +132,7 @@ do {
     print(error.domain)
     print(error.code)
     print(error.userInfo)
+} catch {
+    print(error)
 }
 //: [Next](@next)

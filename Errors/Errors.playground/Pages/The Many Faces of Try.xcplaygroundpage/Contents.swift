@@ -4,27 +4,35 @@
 //:
 import Foundation
 
-if let fileURL = Bundle.main.url(forResource: "swift", withExtension: "txt") {
-    do {
-        let content = try String(contentsOf: fileURL, encoding: .utf8)
-        print(content)
-    } catch {
-        print("\(error)")
+func printFileContents() {
+    if let fileURL = Bundle.main.url(forResource: "swift", withExtension: "txt") {
+        do {
+            let content = try String(contentsOf: fileURL, encoding: .utf8)
+            print(content)
+        } catch {
+            print("\(error)")
+        }
     }
 }
+
+printFileContents()
 //: Try comes in two other forms: `try?` and `try!`. `try?` executes error-prone code, and if any error is generated, then it is converted into an optional where the underlying value has the same type as the error-prone function or intializer's return type. This can simplify code, but the ability to analyze errors is lost.
 //:
-if let fileURL = Bundle.main.url(forResource: "swift", withExtension: "png") {
-    let content = try? String(contentsOf: fileURL, encoding: .utf8)
-    print(content ?? "content is nil")
-    
-    // preferably, combine `if let` with `try?`; it's easier to read
-    if let content = try? String(contentsOf: fileURL, encoding: .utf8) {
-        print(content)
-    } else {
-        print("could not read contents of file into string")
+func printFileContentsTry() {
+    if let fileURL = Bundle.main.url(forResource: "swift", withExtension: "png") {
+        let content = try? String(contentsOf: fileURL, encoding: .utf8)
+        print(content ?? "content is nil")
+        
+        // preferably, combine `if let` with `try?`; it's easier to read
+        if let content = try? String(contentsOf: fileURL, encoding: .utf8) {
+            print(content)
+        } else {
+            print("could not read contents of file into string")
+        }
     }
 }
+
+printFileContentsTry()
 //: - Callout(Watch Out!):
 //: If `try?` is used to set an optional value, but the function that throws but doesn't return a type (returns `Void`), then Xcode will generate a warning.
 //:

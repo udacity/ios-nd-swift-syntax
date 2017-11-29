@@ -16,7 +16,7 @@ func makeBadPurchase() throws {
 do {
     try makeBadPurchase()
 } catch {
-    print("\(error)")
+    print(error)
 }
 //: When using an enum to define a custom error, use associated values to add helpful debugging information.
 //:
@@ -43,8 +43,10 @@ do {
     case let .cartWeightLimitExceeded(weight): /* extract the associated value */
         print("purchase failed. weight exceeds limit by: \(weight)")
     default:
-        print("\(error)")
+        print(error)
         break
     }
+} catch {
+    print(error)
 }
 //: [Next](@next)
