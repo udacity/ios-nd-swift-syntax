@@ -24,7 +24,7 @@ func attemptPurchase() {
     do {
         try processOrder()
     } catch {
-        print("\(error)")
+        print(error)
     }
 }
 
@@ -42,7 +42,7 @@ func attemptPurchaseBadDefer() {
     do {
         try processOrder()
     } catch {
-        print("\(error)")
+        print(error)
     }
 }
 //: Multiple defer blocks may be defined, but are executed in reverse order of when they appear.
@@ -54,7 +54,7 @@ func attemptPurchaseWithMultipleDefers() {
     do {
         try processOrder()
     } catch {
-        print("\(error)")
+        print(error)
     }
 }
 
