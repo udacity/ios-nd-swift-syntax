@@ -66,7 +66,7 @@ func takeOffGuardsPrint(passengersSeated: Bool, crewReady: Bool, runwayClear: Bo
         return
     }
     guard crewReady else {
-        print("passengers is not ready")
+        print("crew is not ready")
         return
     }
     guard runwayClear else {
