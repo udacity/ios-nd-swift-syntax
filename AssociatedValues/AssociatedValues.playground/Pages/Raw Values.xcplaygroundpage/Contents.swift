@@ -23,19 +23,19 @@ print(AudioRate.custom.rawValue)
 //: Raw values can be set explicitly.
 //:
 enum Power: Int {
-    case weak = 10, medium = 20, strong = 30
+    case poor = 10, medium = 20, strong = 30
 }
 
-print(Power.weak.rawValue)
+print(Power.poor.rawValue)
 print(Power.strong.rawValue)
 //: If some raw integer values are explicitly provided, but others are not, then implicit values are assigned as one greater than the previous raw integer value.
 //:
 enum Endurance: Int {
-    case worst, abysmal = 10, weak, medium, strong = 30
+    case worst, abysmal = 10, poor, medium, strong = 30
 }
 
 print(Endurance.worst.rawValue)
-print(Endurance.weak.rawValue)
+print(Endurance.poor.rawValue)
 print(Endurance.strong.rawValue)
 //: - Callout(Watch Out!):
 //: Avoid specifying explicit raw values out of increasing order. It can be confusing to read and cause errors if Xcode tries to use a raw value more than once.
